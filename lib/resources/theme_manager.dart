@@ -29,6 +29,7 @@ class ThemeManager {
     textTheme: TextTheme(
       headlineLarge: FontManager.getHeadLineLargeStyle(),
       headlineMedium:FontManager.getHeadLineStyle() ,
+      headlineSmall: FontManager.getTabBarStyle(),
       bodyMedium: FontManager.getBodyTextStyle(),
       bodyLarge: FontManager.getBodyLargeTextStyle(),
       bodySmall: FontManager.getHintTextStyle(),

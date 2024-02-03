@@ -61,4 +61,7 @@ class SizeManager {
 
   static const double radiusOfBNB = 12.0;
   static const double elevationOfBNB = 30.0;
+  static const double borderRadius = 8.0;
+
+  static const double categoryHeight = 100.0; 
 }

@@ -3,7 +3,7 @@ import 'package:shop_app/resources/values_manager.dart';
 import 'package:shop_app/view/components/image_from_network.dart';
 import 'package:shop_app/view/screens/home/widgets/label.dart';
 
-import 'favBtn.dart';
+import '../../../components/favBtn.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem(

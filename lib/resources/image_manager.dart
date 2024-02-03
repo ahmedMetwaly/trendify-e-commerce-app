@@ -16,4 +16,10 @@ class ImageManager {
   static const String home2= "${path}home2.png";
   static const String home3 = "${path}home3.png";
   static const String home4 = "${path}home4.jpg";
+
+  // shop 
+  static const String clothes = "${path}clothes.png";
+  static const String shoes = "${path}shoes.png";
+  static const String accessories = "${path}accessories.png";
+
 }

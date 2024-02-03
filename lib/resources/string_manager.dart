@@ -72,4 +72,23 @@ class StringManager {
   static const String bag = "Bag";
   static const String favourite = "Favourite";
   static const String profile = "Profile";
+
+  static const String shop = "Shop";
+
+// shop screen
+  static const String categories = "Categories";
+
+  static const String women = "Women";
+
+  static const String men = "Men";
+
+  static const String summerSale = "Summer Sale";
+
+  static const String upTo = "Up to 50% off";
+
+  static const String clothes = "Clothes";
+
+  static const String shoes ="Shoes";
+
+  static const String accessories = "Accessories";
 }

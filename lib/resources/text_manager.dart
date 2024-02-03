@@ -16,11 +16,10 @@ class FontManager {
   }
 
   static TextStyle getHeadLineLargeStyle() =>
-      _getTextStyle(
-        
-        SizeManager.headLineTextSize,
+      _getTextStyle(SizeManager.headLineTextSize,
           fontFamily: "ArchivoBlack",
-          fontWeight: FontWeight.w900, color: ColorsManager.white);
+          fontWeight: FontWeight.w900,
+          color: ColorsManager.white);
 
   static TextStyle getHeadLineStyle() =>
       _getTextStyle(SizeManager.headLineTextSize, fontWeight: FontWeight.w800);
@@ -35,4 +34,7 @@ class FontManager {
 
   static TextStyle getHintTextStyle() =>
       _getTextStyle(SizeManager.bodyTextSize, color: ColorsManager.grey);
+
+  static TextStyle getTabBarStyle() => _getTextStyle(SizeManager.appBarTextSize,
+      color: ColorsManager.black, fontWeight: FontWeight.w700);
 }

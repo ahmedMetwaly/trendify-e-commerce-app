@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/resources/string_manager.dart';
 import 'package:shop_app/resources/values_manager.dart';
 import '../bag/bag.dart';
-import '../cart/cart.dart';
+import '../shop/shop.dart';
 import '../favourite/favourite.dart';
 import '../home/home.dart';
 import '../profile/profile.dart';
@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 List<Widget> screens = const [
   Home(),
-  Cart(),
+  Shop(),
   Bag(),
   Favourite(),
   Profile(),
@@ -30,7 +30,7 @@ List<BottomNavigationBarItem> items = const [
   BottomNavigationBarItem(
       activeIcon: Icon(Icons.shopping_cart_rounded),
       icon: Icon(Icons.shopping_cart_outlined),
-      label: StringManager.cart),
+      label: StringManager.shop),
   BottomNavigationBarItem(
       activeIcon: Icon(Icons.shopping_bag_rounded),
       icon: Icon(Icons.shopping_bag_outlined),
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Theme.of(context).colorScheme.surface,
+              color: Theme.of(context).colorScheme.outline,
               offset: SizeManager.shadowOffsetBNB,
               spreadRadius: SizeManager.sSpace,
               blurRadius: SizeManager.elevationOfBNB,
