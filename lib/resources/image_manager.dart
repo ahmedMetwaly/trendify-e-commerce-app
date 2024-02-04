@@ -18,8 +18,18 @@ class ImageManager {
   static const String home4 = "${path}home4.jpg";
 
   // shop 
+  //women
   static const String clothes = "${path}clothes.png";
   static const String shoes = "${path}shoes.png";
   static const String accessories = "${path}accessories.png";
+  //men
+  static const String hoodies ="${path}hoodies.jpg";
+
+  static const String pants ="${path}pants.jpg";
+
+  static const String shirts="${path}shirts.png";
+
+  static const String menShoes="${path}shoes.jpg";
+
 
 }

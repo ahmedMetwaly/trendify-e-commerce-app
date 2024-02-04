@@ -6,7 +6,7 @@ import '../../../resources/string_manager.dart';
 import '../../../resources/values_manager.dart';
 import '../../components/elevated_button.dart';
 import '../../components/space.dart';
-import '../login/widgets/emailInput.dart';
+import '../login/widgets/email.dart';
 import '../login/widgets/password.dart';
 import '../login/widgets/socialmedia_btn.dart';
 
@@ -91,10 +91,10 @@ class SignUp extends StatelessWidget {
                           // TODO:: check if mail found or not then save email in shared pref then goto home Page
 
                           Navigator.of(context)
-                              .pushReplacementNamed(Routes.home_screen);
+                              .pushReplacementNamed(Routes.homeScreen);
                         } else {
                           Navigator.of(context)
-                              .pushReplacementNamed(Routes.home_screen);
+                              .pushReplacementNamed(Routes.homeScreen);
 
                           print("not valid");
                         }

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-import '../../../../resources/string_manager.dart';
 import '../../../../resources/values_manager.dart';
 
-class SummerSale extends StatelessWidget {
-  const SummerSale({
-    super.key,
+class AdSection extends StatelessWidget {
+  const AdSection({
+    super.key, required this.title, required this.subTitle,
   });
-
+  final String title;
+  final String subTitle;
   @override
   Widget build(BuildContext context) {
         final Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height*0.15,
+      height:  size.height * .16,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(SizeManager.borderRadius),
         color: Theme.of(context).colorScheme.primary,
@@ -23,14 +23,14 @@ class SummerSale extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              StringManager.summerSale.toUpperCase(),
+             title.toUpperCase(),
               style: Theme.of(context)
                   .textTheme
                   .bodyLarge!
                   .copyWith(fontWeight: FontWeight.w900),
             ),
             Text(
-              StringManager.upTo.toUpperCase(),
+              subTitle.toUpperCase(),
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   fontWeight: FontWeight.w700,
                   color: Theme.of(context).colorScheme.inversePrimary),

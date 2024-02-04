@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../resources/values_manager.dart';
-import '../screens/home/widgets/productItem.dart';
+import 'product_item.dart';
 import 'section_bar.dart';
 
 class DisplaySection extends StatelessWidget {

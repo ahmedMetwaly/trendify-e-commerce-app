@@ -4,7 +4,7 @@ import "package:shop_app/resources/string_manager.dart";
 import "package:shop_app/resources/values_manager.dart";
 import "package:shop_app/view/components/elevated_button.dart";
 import "package:shop_app/view/components/space.dart";
-import 'package:shop_app/view/screens/login/widgets/emailInput.dart';
+import 'package:shop_app/view/screens/login/widgets/email.dart';
 import 'package:shop_app/view/screens/login/widgets/password.dart';
 import 'package:shop_app/view/screens/login/widgets/socialmedia_btn.dart';
 

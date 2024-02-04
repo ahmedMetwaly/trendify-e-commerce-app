@@ -46,7 +46,7 @@ class ThemeManager {
           borderRadius:
               BorderRadius.circular(SizeManager.borderRadiusOfInputField),
           borderSide: const BorderSide(
-            color: ColorsManager.white,
+            color: ColorsManager.grey,
           )),
       errorBorder: OutlineInputBorder(
           borderRadius:
@@ -58,7 +58,7 @@ class ThemeManager {
           borderRadius:
               BorderRadius.circular(SizeManager.borderRadiusOfInputField),
           borderSide: const BorderSide(
-            color: ColorsManager.white,
+            color: ColorsManager.grey,
           )),
       focusedErrorBorder: OutlineInputBorder(
           borderRadius:

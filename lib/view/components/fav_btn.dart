@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-class favBtn extends StatelessWidget {
-  const favBtn({
+class FavBtn extends StatelessWidget {
+  const FavBtn({
     super.key,
   });
 
@@ -29,7 +29,7 @@ class favBtn extends StatelessWidget {
                         .colorScheme
                         .shadow
                         .withOpacity(0.2),
-                    offset: Offset(5, 4),
+                    offset: const Offset(5, 4),
                     blurRadius: 2,
                   )
                 ]),

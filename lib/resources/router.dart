@@ -24,7 +24,7 @@ class RoutesGeneratour {
 
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const Home());
-      case Routes.home_screen:
+      case Routes.homeScreen:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
 
       default:

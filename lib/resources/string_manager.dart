@@ -88,7 +88,25 @@ class StringManager {
 
   static const String clothes = "Clothes";
 
-  static const String shoes ="Shoes";
+  static const String shoes = "Shoes";
 
   static const String accessories = "Accessories";
+
+  static const String filter = "Filter";
+
+  static const String price = "Price | Form : To \$";
+
+  static const String from = "From";
+
+  static const String to = "To";
+
+  static const String submit = "Submit";
+
+  static const String hoodies = "Hoodies";
+  static const String shirts = "Shirts";
+  static const String pants = "Pants";
+
+  static const String buyToday = "Buy today";
+
+  static const String getYourReward = "Get your reward";
 }
