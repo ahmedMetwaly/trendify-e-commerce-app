@@ -7,7 +7,7 @@ PreferredSize bottomSheet(
   BuildContext context,
 ) {
   return PreferredSize(
-      preferredSize: const Size.fromHeight(50),
+      preferredSize: const Size.fromHeight(59),
       child: GestureDetector(
         onTap: () {
           showModalBottomSheet(

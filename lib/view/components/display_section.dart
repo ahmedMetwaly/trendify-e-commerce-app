@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/model/product_models/product_details_model.dart';
 import '../../resources/values_manager.dart';
 import 'product_item.dart';
 import 'section_bar.dart';
@@ -8,15 +9,13 @@ class DisplaySection extends StatelessWidget {
     super.key,
     required this.sectionTitle,
     required this.sectionSlogan,
-    required this.sectionRoute,
-    required this.productLabel,
-    required this.productLabelBColor,
+    required this.sectionRoute, required this.products,
+  
   });
   final String sectionTitle;
   final String sectionSlogan;
   final String sectionRoute;
-  final String productLabel;
-  final Color productLabelBColor;
+  final List<ProductModel> products;
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +33,17 @@ class DisplaySection extends StatelessWidget {
               vertical: PaddingManager.p10),
           child: ListView.separated(
             itemBuilder: (context, index) => ProductItem(
-              label: productLabel.toUpperCase(),
-              labelColor: productLabelBColor,
+              id: 21943155,
+              label:"",
+              labelColor: Colors.black,
               title: "T-Shirt Sailling",
-              category: " women's clothing",
+              brandName: " women's clothing",
               imageUrl:
                   "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-              price: " 9.99",
+              retailPrice: " 9.99",
+              salePrice: "5.5",
+              goodsSn: "snasns",
+              productRelationID: "lsakklsj",
             ),
             separatorBuilder: (context, index) => const SizedBox(width: 15),
             itemCount: 5,

@@ -3,8 +3,10 @@ import 'package:introduction_screen/introduction_screen.dart';
 import 'package:shop_app/resources/image_manager.dart';
 import 'package:shop_app/resources/values_manager.dart';
 
+import '../../../generated/l10n.dart';
 import '../../../resources/routes.dart';
 import '../../../resources/string_manager.dart';
+import '../../../services/shared_prefrences/sharedprefrences_service.dart';
 import 'widgets/onboarding_button.dart';
 
 class OnBoarding extends StatelessWidget {
@@ -14,8 +16,8 @@ class OnBoarding extends StatelessWidget {
   Widget build(BuildContext context) {
     List<PageViewModel> pages = [
       PageViewModel(
-        title: StringManager.onboarding1Title,
-        body: StringManager.onboarding1Body,
+        title: S.current.onboarding1Title,
+        body: S.current.onboarding1Body,
         image: Image.asset(ImageManager.onboarding1),
       ),
       PageViewModel(
@@ -35,11 +37,17 @@ class OnBoarding extends StatelessWidget {
           bodyPadding: const EdgeInsets.all(PaddingManager.pMainPadding),
           showSkipButton: true,
           curve: Curves.bounceInOut,
-          onSkip: () => Navigator.of(context).pushReplacementNamed(Routes.signUp),
-          onDone: () => Navigator.of(context).pushReplacementNamed(Routes.signUp),
-          skip: const OnBoardingButton(title: StringManager.skip),
+          onSkip: () async {
+            await SharedPrefrencesService.addBoolToSF("isOpenedBefore", true);
+            Navigator.of(context).pushReplacementNamed(Routes.logIn);
+          },
+          onDone: () async {
+            await SharedPrefrencesService.addBoolToSF("isOpenedBefore", true);
+            Navigator.of(context).pushReplacementNamed(Routes.logIn);
+          },
+          skip:  OnBoardingButton(title: S.current.skip),
           next: const Icon(Icons.arrow_forward),
-          done: const OnBoardingButton(title: StringManager.done),
+          done:  OnBoardingButton(title: S.current.done),
           pages: pages,
         ),
       ),

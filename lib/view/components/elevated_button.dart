@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/resources/values_manager.dart';
 
 class MyElevatedButton extends StatelessWidget {
-  const MyElevatedButton({super.key, required this.title, required this.onPress});
+  const MyElevatedButton(
+      {super.key, required this.title, required this.onPress, this.color});
   final String title;
   final Function onPress;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()=> onPress(),
+      onTap: () => onPress(),
       child: Container(
         padding: const EdgeInsets.all(PaddingManager.pInternalPadding),
-        decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.primary,
-            
+        decoration: BoxDecoration( 
+            color: color ?? Theme.of(context).colorScheme.primary,
             borderRadius: BorderRadius.circular(SizeManager.sBorderRadius),
             boxShadow: [
               BoxShadow(

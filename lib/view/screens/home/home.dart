@@ -14,9 +14,13 @@ class Home extends StatelessWidget {
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
-          expandedHeight: 490,
+                expandedHeight:  MediaQuery.of(context).size.height * 0.69,
           elevation: 10,
           flexibleSpace: FlexibleSpaceBar(
+            background: Image.asset(
+              ImageManager.homeSliverAppBar,
+              fit: BoxFit.cover,
+            ),
             titlePadding: const EdgeInsets.all(PaddingManager.pMainPadding),
             title: SizedBox(
               width: SizeManager.sliverAppbarTitle,
@@ -43,10 +47,6 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            background: Image.asset(
-              ImageManager.homeSliverAppBar,
-              fit: BoxFit.cover,
-            ),
           ),
         ),
         SliverList(
@@ -56,23 +56,21 @@ class Home extends StatelessWidget {
                 sectionTitle: StringManager.sNew,
                 sectionSlogan: StringManager.neverSeen,
                 sectionRoute: Routes.onBoarding,
-                productLabel: StringManager.sNew,
-                productLabelBColor: Theme.of(context).colorScheme.surface,
+                products: [],
               ),
               const Categories(),
               DisplaySection(
                 sectionTitle: StringManager.sale,
                 sectionSlogan: StringManager.superSale,
                 sectionRoute: Routes.onBoarding,
-                productLabel: "-20%",
-                productLabelBColor: Theme.of(context).colorScheme.primary,
+               products: [],
               ),
               SizedBox(
                   height: MediaQuery.of(context)
                           .size
                           .bottomCenter(Offset.zero)
                           .distance *
-                      0.1),
+                      0.072),
             ],
           ),
         ),

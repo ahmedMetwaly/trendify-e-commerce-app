@@ -102,11 +102,47 @@ class StringManager {
 
   static const String submit = "Submit";
 
-  static const String hoodies = "Hoodies";
+  static const String tShirts = "T-Shirts";
   static const String shirts = "Shirts";
   static const String pants = "Pants";
 
   static const String buyToday = "Buy today";
 
   static const String getYourReward = "Get your reward";
+
+  static const String trendify = "Trendify";
+
+  static const String color = "Color";
+
+  static const String size = "Size";
+
+  static const String productMeasuremnet = "Product Measurement";
+
+  static const String inch = "Inch";
+
+  static const String cm = "CM";
+
+  static const String description = "Description";
+
+  static const String sizeGuide = "Size Guide";
+
+  static const String material = "Material";
+
+  static const String top = "Top";
+
+  static const String reviews = "Reviews";
+
+  static const String reting = "Rating&Reviews";
+
+  static const String ratings = "Ratings";
+
+  static const String oneSize = "One Size";
+
+  static const String addToCart ="Add to cart";
+
+  static const String  addedToCart = "Added to cart";
+  static const String  plus9 = "+9";
+
+  static const String relatedProducts = "Related Products";
+
 }

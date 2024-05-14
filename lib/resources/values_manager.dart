@@ -9,6 +9,8 @@ class PaddingManager {
   static const double pSocialBtnVPadding = 20.0;
 
   static const double pSocialBtnHPadding = 34.0;
+
+  static const double p5 =5.0;
 }
 
 class MarginManager {
@@ -21,7 +23,7 @@ class MarginManager {
 
 class SizeManager {
   static const double s0 = 0.0;
-  static const double sSpace = 10.0;
+  static const double sSpace = 6.0;
   static const double sSpace16 = 16.0;
   static const double sSpace32 = 32.0;
 
@@ -65,5 +67,9 @@ class SizeManager {
 
   static const double categoryHeight = 100.0; 
   static const double bottomSheetRadius = 34.0; 
+  static const double colorOptionSize = 70.0; 
+  static const double sizeOptionsHeight= 40.0;
+
+  static const double arrowSize =18.0; 
   
 }

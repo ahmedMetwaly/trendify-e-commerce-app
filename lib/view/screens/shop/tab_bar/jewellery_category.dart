@@ -1,16 +1,17 @@
 import "package:flutter/material.dart";
 import "package:shop_app/view/components/product_item.dart";
-import "../../../../../resources/values_manager.dart";
+import '../../../../resources/values_manager.dart';
 
 class JewelleryCategory extends StatelessWidget {
   const JewelleryCategory({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<ProductItem> products = [
+    List<ProductItem> products =[]; /*[
       ProductItem(
+          id: "21943155",
           boxFit: BoxFit.cover,
-          category: "jewellery's category",
+          brandName: "jewellery's category",
           title: "Blouse",
           price: "99",
           imageUrl:
@@ -18,8 +19,9 @@ class JewelleryCategory extends StatelessWidget {
           label: "New",
           labelColor: Theme.of(context).colorScheme.surface),
       ProductItem(
+          id: "21943155",
           boxFit: BoxFit.cover,
-          category: "jewellery's category",
+          brandName: "jewellery's category",
           title: "Blouse",
           price: "99",
           imageUrl:
@@ -27,8 +29,9 @@ class JewelleryCategory extends StatelessWidget {
           label: "New",
           labelColor: Theme.of(context).colorScheme.surface),
       ProductItem(
+          id: "21943155",
           boxFit: BoxFit.cover,
-          category: "jewellery's category",
+          brandName: "jewellery's category",
           title: "Blouse",
           price: "99",
           imageUrl:
@@ -36,8 +39,9 @@ class JewelleryCategory extends StatelessWidget {
           label: "New",
           labelColor: Theme.of(context).colorScheme.surface),
       ProductItem(
+          id: "21943155",
           boxFit: BoxFit.cover,
-          category: "jewellery's category",
+          brandName: "jewellery's category",
           title: "Blouse",
           price: "99",
           imageUrl:
@@ -45,8 +49,9 @@ class JewelleryCategory extends StatelessWidget {
           label: "New",
           labelColor: Theme.of(context).colorScheme.surface),
       ProductItem(
+          id: "21943155",
           boxFit: BoxFit.cover,
-          category: "jewellery's category",
+          brandName: "jewellery's category",
           title: "Blouse",
           price: "99",
           imageUrl:
@@ -54,8 +59,9 @@ class JewelleryCategory extends StatelessWidget {
           label: "New",
           labelColor: Theme.of(context).colorScheme.surface),
       ProductItem(
+          id: "21943155",
           boxFit: BoxFit.cover,
-          category: "jewellery's category",
+          brandName: "jewellery's category",
           title: "Blouse",
           price: "99",
           imageUrl:
@@ -63,8 +69,9 @@ class JewelleryCategory extends StatelessWidget {
           label: "New",
           labelColor: Theme.of(context).colorScheme.surface),
       ProductItem(
+          id: "21943155",
           boxFit: BoxFit.cover,
-          category: "jewellery's category",
+          brandName: "jewellery's category",
           title: "Blouse",
           price: "99",
           imageUrl:
@@ -72,8 +79,9 @@ class JewelleryCategory extends StatelessWidget {
           label: "New",
           labelColor: Theme.of(context).colorScheme.surface),
       ProductItem(
+          id: "21943155",
           boxFit: BoxFit.cover,
-          category: "jewellery's category",
+          brandName: "jewellery's category",
           title: "Blouse",
           price: "99",
           imageUrl:
@@ -81,7 +89,7 @@ class JewelleryCategory extends StatelessWidget {
           label: "New",
           labelColor: Theme.of(context).colorScheme.surface),
     ];
-
+*/
     return GridView(
       padding: const EdgeInsets.all(PaddingManager.pMainPadding),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

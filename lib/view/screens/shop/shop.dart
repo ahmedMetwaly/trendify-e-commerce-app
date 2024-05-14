@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import "package:shop_app/resources/string_manager.dart";
-import 'package:shop_app/view/screens/shop/widgets/tab_bar/jewellery_category.dart';
-import 'package:shop_app/view/screens/shop/widgets/tab_bar/men_category.dart';
-import 'package:shop_app/view/screens/shop/widgets/tab_bar/women_category.dart';
+import 'package:shop_app/view/screens/shop/tab_bar/jewellery_category.dart';
+import 'package:shop_app/view/screens/shop/tab_bar/men_category.dart';
+import 'package:shop_app/view/screens/shop/tab_bar/women_category.dart';
 
 class Shop extends StatelessWidget {
   const Shop({super.key});
