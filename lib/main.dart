@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shop_app/bloc/admin/color_management_bloc/color_bloc.dart';
+import 'package:shop_app/bloc/admin/size_management_bloc/size_bloc.dart';
 import 'package:shop_app/bloc/authentication/auth_events.dart';
 import 'package:shop_app/bloc/firestore/firestore_bloc.dart';
 import 'package:shop_app/firebase_options.dart';
@@ -13,7 +15,6 @@ import 'package:shop_app/services/api/dio.dart';
 import 'package:shop_app/view_model/bloc/cart_view_model.dart';
 import 'package:shop_app/view_model/bloc/partition_view_model.dart';
 import 'package:shop_app/view_model/bloc/product_view_model.dart';
-
 import 'bloc/authentication/auth_bloc.dart';
 import 'bloc/sharedprefrences/sharedpref_bloc.dart';
 import 'bloc/sharedprefrences/sharedpref_state.dart';
@@ -38,6 +39,8 @@ void main() async {
     BlocProvider(create: (context) => ProductViewModel()),
     BlocProvider(create: (context) => SectionViewModel()),
     BlocProvider(create: (context) => CartBloc()),
+    BlocProvider(create: (context) => AddColor()),
+    BlocProvider(create: (context) => AddSize()),
   ], child: const MyApp()));
 }
 

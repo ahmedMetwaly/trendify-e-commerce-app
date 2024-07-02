@@ -2,23 +2,22 @@ import 'package:flutter/material.dart';
 
 import '../../../../generated/l10n.dart';
 
-class Name extends StatefulWidget {
+class Name extends StatelessWidget {
   const Name({
     super.key,
     required this.nameController,
+    required this.title,
+    this.enabled,
   });
 
   final TextEditingController nameController;
+  final String title;
+  final bool? enabled;
 
-  @override
-  State<Name> createState() => _NameState();
-}
-
-class _NameState extends State<Name> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: widget.nameController,
+      controller: nameController,
       validator: (value) {
         if (value!.isEmpty) {
           return S.current.requiredField;
@@ -28,9 +27,15 @@ class _NameState extends State<Name> {
         }
         return null;
       },
-      style: Theme.of(context).textTheme.bodyMedium,
+      style: enabled == null
+          ? Theme.of(context).textTheme.bodyMedium
+          : Theme.of(context)
+              .textTheme
+              .bodyMedium!
+              .copyWith(color: Theme.of(context).colorScheme.outline),
       decoration: InputDecoration(
-        labelText: S.current.name,
+        labelText: title,
+        enabled: enabled ?? true,
       ),
     );
   }

@@ -78,6 +78,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       leading: const SizedBox(),
                       flexibleSpace: FlexibleSpaceBar(
                         background: GallaryView(
+                          fromNetwork: true,
                             galleryItems: productInfo!
                                 .detailImages!.colorImages![indx].values.first),
                         titlePadding:
@@ -125,7 +126,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           ),
                         ),
                         const Space(),
-                        SizeOptions(
+                        SizeOption(
                           availableSizes:
                               productInfo.attrSizeDict?.availableSizes ?? [],
                           sizesDetails:

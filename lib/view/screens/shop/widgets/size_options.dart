@@ -3,17 +3,17 @@ import 'package:shop_app/resources/string_manager.dart';
 import 'package:shop_app/resources/values_manager.dart';
 import 'package:shop_app/view/components/space.dart';
 
-class SizeOptions extends StatefulWidget {
-  const SizeOptions(
+class SizeOption extends StatefulWidget {
+  const SizeOption(
       {super.key, required this.availableSizes, required this.sizesDetails});
   final List availableSizes;
   final List sizesDetails;
 
   @override
-  State<SizeOptions> createState() => _SizeOptionsState();
+  State<SizeOption> createState() => _SizeOptionsState();
 }
 
-class _SizeOptionsState extends State<SizeOptions> {
+class _SizeOptionsState extends State<SizeOption> {
   late final List<bool> _selectedSizes;
   int? selectedIndex;
   String? measureUnit = "inch";

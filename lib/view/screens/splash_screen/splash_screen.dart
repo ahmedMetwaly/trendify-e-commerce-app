@@ -2,6 +2,7 @@ import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 
 import "package:flutter_bloc/flutter_bloc.dart";
+import "package:shop_app/utilities/constants.dart";
 
 import "../../../bloc/authentication/aurh_states.dart";
 import "../../../bloc/authentication/auth_bloc.dart";
@@ -55,14 +56,18 @@ class SplashScreen extends StatelessWidget {
             ));
       },
       listener: (BuildContext context, AuthenticationStates state) async {
-        if (state is AuthenticationSuccessState &&
-            FirebaseAuth.instance.currentUser!.emailVerified == true) {
-          //print("the email verified");
-          Navigator.of(context).pushReplacementNamed(Routes.homeScreen);
-        } else if (state is AuthenticationSuccessState &&
-            FirebaseAuth.instance.currentUser!.emailVerified == false) {
-          //print("the email not verified");
-          Navigator.of(context).pushReplacementNamed(Routes.verifyEmail);
+        if (FirebaseAuth.instance.currentUser!.uid == adminId) {
+          Navigator.of(context).pushReplacementNamed(Routes.adminHome);
+        } else {
+          if (state is AuthenticationSuccessState &&
+              FirebaseAuth.instance.currentUser!.emailVerified == true) {
+            //print("the email verified");
+            Navigator.of(context).pushReplacementNamed(Routes.homeScreen);
+          } else if (state is AuthenticationSuccessState &&
+              FirebaseAuth.instance.currentUser!.emailVerified == false) {
+            //print("the email not verified");
+            Navigator.of(context).pushReplacementNamed(Routes.verifyEmail);
+          }
         }
       },
     );

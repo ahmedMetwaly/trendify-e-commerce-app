@@ -12,6 +12,7 @@ import 'package:shop_app/view/screens/signup/screens/forget_password.dart';
 import 'package:shop_app/view/screens/signup/screens/reset_email.dart';
 import 'package:shop_app/view/screens/signup/widgets/signup.dart';
 import 'package:shop_app/view/screens/splash_screen/splash_screen.dart';
+import '../view/screens/admin/screens/admin_home/screens/add_product.dart';
 import '../view/screens/login/login.dart';
 import '../view/screens/shop/reviews.dart';
 import '../view/screens/signup/screens/verfy_email.dart';
@@ -39,6 +40,8 @@ class RoutesGeneratour {
         return MaterialPageRoute(builder: (_) => const LogIn());
       case Routes.adminHome:
         return MaterialPageRoute(builder: (_) => const AdminHome());
+         case Routes.addProduct:
+        return MaterialPageRoute(builder: (_) => const AddProduct());
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const Home());
       case Routes.homeScreen:

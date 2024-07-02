@@ -1,4 +1,5 @@
 import 'category.dart';
+import 'colors_model.dart';
 import 'description.dart';
 import 'in_storage.dart';
 import 'product_material.dart';
@@ -18,7 +19,7 @@ class Product {
   List<Review>? reviews;
   List<String>? images;
   String? puplishedDate;
-  List<String>? colors;
+  List<ColorsModel>? colors;
   Category? category;
   List<ProductInStock>? productsInStock;
   Product(
@@ -56,7 +57,7 @@ class Product {
     reviews = json["reviews"].map<Review>((e) => Review.fromJson(e)).toList();
     images = json["images"];
     puplishedDate = json["puplishedDate"];
-    colors = json["colors"];
+    colors = json["colors"].map<ColorsModel>((e) => ColorsModel.fromJson(e)).toList();
     category = Category.fromJson(json["category"]);
     productsInStock = json["productsInStock"]
         .map<ProductInStock>((e) => ProductInStock.fromJson(e))
@@ -84,8 +85,9 @@ class Product {
     }
     data["images"] = images;
     data["puplishedDate"] = puplishedDate;
-    data["colors"] = colors;
-    if (category != null) {
+if (colors != null) {
+      data['colors'] = colors!.map((v) => v.toJson()).toList();
+    }    if (category != null) {
       data["category"] = category!.toJson();
     }
     if (productsInStock != null) {

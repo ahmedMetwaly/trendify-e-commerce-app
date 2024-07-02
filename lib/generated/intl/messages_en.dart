@@ -22,13 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "PriceInfo": MessageLookupByLibrary.simpleMessage("Price information"),
+        "addNewColor": MessageLookupByLibrary.simpleMessage("Add new color"),
+        "addProduct": MessageLookupByLibrary.simpleMessage("Add Product"),
         "arLang": MessageLookupByLibrary.simpleMessage("Arabic"),
         "articleCount": MessageLookupByLibrary.simpleMessage("Articles 100+"),
+        "brand": MessageLookupByLibrary.simpleMessage("Brand"),
         "by": MessageLookupByLibrary.simpleMessage("By"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "checkYourEmail": MessageLookupByLibrary.simpleMessage(
             "Password reset email sent check your account."),
         "clear": MessageLookupByLibrary.simpleMessage("Delete all items"),
+        "colorCode": MessageLookupByLibrary.simpleMessage("Color code"),
+        "colorName": MessageLookupByLibrary.simpleMessage("Color name"),
+        "colorsInformation":
+            MessageLookupByLibrary.simpleMessage("Colors information"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confim"),
         "confirmDelete": MessageLookupByLibrary.simpleMessage("Confirm Delete"),
         "confirmLogout":
@@ -107,8 +115,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noRoute": MessageLookupByLibrary.simpleMessage("No Page Found"),
         "noUser": MessageLookupByLibrary.simpleMessage(
             "The email or password is not correct"),
-        "notValidEmail":
-            MessageLookupByLibrary.simpleMessage("Not valid email"),
+        "notValidEmail": MessageLookupByLibrary.simpleMessage(
+            "it mus\'nt contain any number [0-9]"),
         "notValidName": MessageLookupByLibrary.simpleMessage("Not Valid Name"),
         "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onboarding1Body": MessageLookupByLibrary.simpleMessage(
@@ -132,11 +140,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordReset": MessageLookupByLibrary.simpleMessage(
             "Password reset link sent to your email!"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "price": MessageLookupByLibrary.simpleMessage("Price"),
+        "productDetails":
+            MessageLookupByLibrary.simpleMessage("Product Details"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "requiredField": MessageLookupByLibrary.simpleMessage("Required Field"),
         "resendEmail": MessageLookupByLibrary.simpleMessage("Resend email"),
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
+        "salePrecentage":
+            MessageLookupByLibrary.simpleMessage("Sale precentage"),
+        "salePrecentageError": MessageLookupByLibrary.simpleMessage(
+            "Sale precentage must be less than 100"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchHint": MessageLookupByLibrary.simpleMessage(
             "Search article, topic, writer"),
@@ -151,9 +166,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "signup": MessageLookupByLibrary.simpleMessage("Sign up"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "title": MessageLookupByLibrary.simpleMessage("Title"),
         "trend": MessageLookupByLibrary.simpleMessage("Trending topic today"),
         "unKnownError": MessageLookupByLibrary.simpleMessage(
             "An Error has occurred, please try again later !"),
+        "uploadImages": MessageLookupByLibrary.simpleMessage("Upload Images"),
         "userError":
             MessageLookupByLibrary.simpleMessage("User name not found!"),
         "userNotFound": MessageLookupByLibrary.simpleMessage("User not found"),

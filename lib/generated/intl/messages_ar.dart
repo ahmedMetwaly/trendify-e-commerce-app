@@ -22,13 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "PriceInfo": MessageLookupByLibrary.simpleMessage("معلومات عن السعر"),
+        "addNewColor": MessageLookupByLibrary.simpleMessage("إضافة لون جديد"),
         "arLang": MessageLookupByLibrary.simpleMessage("العربية"),
         "articleCount": MessageLookupByLibrary.simpleMessage("أكثر من 100+"),
+        "brand": MessageLookupByLibrary.simpleMessage("المصنع"),
         "by": MessageLookupByLibrary.simpleMessage("بواسطة"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "checkYourEmail": MessageLookupByLibrary.simpleMessage(
             "تم إرسال بريد إلكتروني لإعادة ضبط كلمة المرور. تحقق من حسابك."),
         "clear": MessageLookupByLibrary.simpleMessage("حذف جميع العناصر"),
+        "colorCode": MessageLookupByLibrary.simpleMessage("كود اللون"),
+        "colorName": MessageLookupByLibrary.simpleMessage("اسم اللون"),
+        "colorsInformation":
+            MessageLookupByLibrary.simpleMessage("معلومات عن الألوان"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirmDelete": MessageLookupByLibrary.simpleMessage("تأكيد الحذف"),
         "confirmLogout":
@@ -105,7 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noUser": MessageLookupByLibrary.simpleMessage(
             "البريد الإلكتروني أو كلمة المرور غير صحيحة"),
         "notValidEmail": MessageLookupByLibrary.simpleMessage("غير صحيح"),
-        "notValidName": MessageLookupByLibrary.simpleMessage("الاسم غير صحيح"),
+        "notValidName":
+            MessageLookupByLibrary.simpleMessage("لا يجب ان تحتوى على أرقام"),
         "ok": MessageLookupByLibrary.simpleMessage("موافق"),
         "onboarding1Body": MessageLookupByLibrary.simpleMessage(
             "ابق في الصدارة مع News! خصص موجز الأخبار الخاص بك، واحصل على تنبيهات الأخبار العاجلة، واستكشف عالمًا من المعلومات بين يديك."),
@@ -128,12 +136,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordReset": MessageLookupByLibrary.simpleMessage(
             "تم إرسال رابط إعادة ضبط كلمة المرور إلى بريدك الإلكتروني!"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "price": MessageLookupByLibrary.simpleMessage("السعر"),
+        "productDetails": MessageLookupByLibrary.simpleMessage("تفاصيل المنتج"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف\nالشخصي"),
         "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
         "requiredField": MessageLookupByLibrary.simpleMessage("مطلوب"),
         "resendEmail": MessageLookupByLibrary.simpleMessage(
             "إعادة إرسال البريد الإلكتروني"),
         "retry": MessageLookupByLibrary.simpleMessage("أعد المحاولة"),
+        "salePrecentage": MessageLookupByLibrary.simpleMessage("نسبة الخصم"),
+        "salePrecentageError": MessageLookupByLibrary.simpleMessage(
+            "نسبة الخصم لابد ان تكون اقل من 100"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "searchHint":
             MessageLookupByLibrary.simpleMessage("بحث المقال، الموضوع، الكاتب"),
@@ -147,9 +160,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "signup": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
         "submit": MessageLookupByLibrary.simpleMessage("موافق"),
+        "title": MessageLookupByLibrary.simpleMessage("الأسم"),
         "trend": MessageLookupByLibrary.simpleMessage("موضوعات رائجة اليوم"),
         "unKnownError": MessageLookupByLibrary.simpleMessage(
             "لقد حدث خطأ يرجى المحاولة مرة أخرى لاحقا !"),
+        "uploadImages": MessageLookupByLibrary.simpleMessage("أضافة صور"),
         "userError": MessageLookupByLibrary.simpleMessage(
             "لم يتم العثور على اسم المستخدم!"),
         "userNotFound":

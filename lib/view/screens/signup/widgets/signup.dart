@@ -109,7 +109,7 @@ class SignUp extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Name(nameController: nameController),
+                      Name(nameController: nameController,title: S.current.name,),
                       const Space(),
                       Email(inputController: emailController),
                       const Space(),

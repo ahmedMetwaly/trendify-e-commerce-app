@@ -190,10 +190,10 @@ class S {
     );
   }
 
-  /// `Not valid email`
+  /// `it mus'nt contain any number [0-9]`
   String get notValidEmail {
     return Intl.message(
-      'Not valid email',
+      'it mus\'nt contain any number [0-9]',
       name: 'notValidEmail',
       desc: '',
       args: [],
@@ -965,6 +965,181 @@ class S {
     return Intl.message(
       'Create accoount',
       name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Product`
+  String get addProduct {
+    return Intl.message(
+      'Add Product',
+      name: 'addProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload Images`
+  String get uploadImages {
+    return Intl.message(
+      'Upload Images',
+      name: 'uploadImages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product Details`
+  String get productDetails {
+    return Intl.message(
+      'Product Details',
+      name: 'productDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get title {
+    return Intl.message(
+      'Title',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Brand`
+  String get brand {
+    return Intl.message(
+      'Brand',
+      name: 'brand',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message(
+      'Price',
+      name: 'price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sale precentage`
+  String get salePrecentage {
+    return Intl.message(
+      'Sale precentage',
+      name: 'salePrecentage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sale precentage must be less than 100`
+  String get salePrecentageError {
+    return Intl.message(
+      'Sale precentage must be less than 100',
+      name: 'salePrecentageError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price information`
+  String get PriceInfo {
+    return Intl.message(
+      'Price information',
+      name: 'PriceInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get deleteThisColor {
+    return Intl.message(
+      'Delete this color',
+      name: 'deleteThisColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Colors information`
+  String get colorsInformation {
+    return Intl.message(
+      'Colors information',
+      name: 'colorsInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add new color`
+  String get addNewColor {
+    return Intl.message(
+      'Add new color',
+      name: 'addNewColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Color code`
+  String get colorCode {
+    return Intl.message(
+      'Color code',
+      name: 'colorCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Color name`
+  String get colorName {
+    return Intl.message(
+      'Color name',
+      name: 'colorName',
+      desc: '',
+      args: [],
+    );
+  }
+   /// `Size Informations`
+  String get sizeInformations {
+    return Intl.message(
+      'Size Informations',
+      name: 'sizeInformations',
+      desc: '',
+      args: [],
+    );
+  } 
+  /// 'Delete This Size'
+  String get deleteThisSize {
+    return Intl.message(
+      'Delete This Size',
+      name: 'deleteThisSize',
+      desc: '',
+      args: [],
+    );
+  }
+  /// 'Delete This Size'
+  String get addNewSize {
+    return Intl.message(
+      'Add New Size',
+      name: 'addNewSize',
+      desc: '',
+      args: [],
+    );
+  }
+  
+   String get uploadMainImage {
+    return Intl.message(
+      'Upload Main Image',
+      name: 'uploadMainImage',
       desc: '',
       args: [],
     );

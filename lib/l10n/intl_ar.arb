@@ -9,7 +9,7 @@
     "loginWithSocialMedia": "أو تسجيل الدخول بواسطة",
     "signup": "إنشاء حساب",
     "requiredField": "مطلوب",
-    "notValidName": "الاسم غير صحيح",
+    "notValidName": "لا يجب ان تحتوى على أرقام",
     "name": "الاسم",
     "haveAccoount": "لدي حساب بالفعل",
     "signUpWithSc": "إنشاء حساب بواسطة",
@@ -34,8 +34,7 @@
     "noFavorite": "ليس لديك مفضل حتى الآن!",
     "profile": "الملف\nالشخصي",
     "searchHint": "بحث المقال، الموضوع، الكاتب",
-    "selectLanguage":"أختر اللغة",
-
+    "selectLanguage": "أختر اللغة",
     "trend": "موضوعات رائجة اليوم",
     "goToLink": "انتقل إلى الرابط",
     "by": "بواسطة",
@@ -92,6 +91,27 @@
     "internetNotStable": "الاتصال بالانترنت غير مستقر !",
     "unKnownError": "لقد حدث خطأ يرجى المحاولة مرة أخرى لاحقا !",
     "or": "أو",
-    "createAccount":"عمل حساب"
+    "createAccount": "عمل حساب",
+    "uploadImages": "أضافة صور",
+    "productDetails": "تفاصيل المنتج",
+    "title": "الأسم",
+    "brand": "المصنع",
+    "price" :"السعر",
+    "salePrecentage": "نسبة الخصم",
+    "salePrecentageError": "نسبة الخصم لابد ان تكون اقل من 100",
+    "PriceInfo" : "معلومات عن السعر",
+    "colorsInformation": "معلومات عن الألوان",
+    "addNewColor" :"إضافة لون جديد",
+    "deleteThisColor": "حذف هذا اللون",
+    "colorCode" :"كود اللون",
+    "colorName": "اسم اللون",
+    "sizeInformations": "معلومات عن المقاسات",
+    "deleteThisSize": "حذف هذا المقاس",
+    "addNewSize" : "اضف مقاس جديد",
+    "uploadMainImage" : "أضف الصورة الرئيسية"
+
+
+
+
 
 }
