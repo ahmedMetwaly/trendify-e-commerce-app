@@ -45,7 +45,7 @@ class ColorsInformation extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Align(
+                     index==0? const SizedBox(height: 20,): Align(
                         alignment: Alignment.centerRight,
                         child: TextButton.icon(
                             onPressed: () =>

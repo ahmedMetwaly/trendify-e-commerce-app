@@ -3,7 +3,7 @@ import "package:flutter/material.dart";
 import "package:shop_app/generated/l10n.dart";
 import "package:shop_app/resources/values_manager.dart";
 import "package:shop_app/view/screens/admin/screens/admin_home/widgets/price_info.dart";
-import "package:shop_app/view/screens/admin/screens/admin_home/widgets/upload_images.dart";
+import "package:shop_app/view/screens/admin/screens/admin_home/widgets/upload_main_image/upload_image.dart";
 
 import "../../../../../components/elevated_button.dart";
 import "../widgets/colors_information/colors_info.dart";
@@ -67,7 +67,7 @@ class AddProduct extends StatelessWidget {
             key: formKey,
             child: Column(
               children: [
-                const UploadImages(),
+                const UploadMainImage(),
                 const SizedBox(height: 25),
                 MainInfo(title: title, brand: brand),
                 const SizedBox(height: 25),

@@ -1108,7 +1108,8 @@ class S {
       args: [],
     );
   }
-   /// `Size Informations`
+
+  /// `Size Informations`
   String get sizeInformations {
     return Intl.message(
       'Size Informations',
@@ -1116,7 +1117,8 @@ class S {
       desc: '',
       args: [],
     );
-  } 
+  }
+
   /// 'Delete This Size'
   String get deleteThisSize {
     return Intl.message(
@@ -1126,6 +1128,7 @@ class S {
       args: [],
     );
   }
+
   /// 'Delete This Size'
   String get addNewSize {
     return Intl.message(
@@ -1135,11 +1138,29 @@ class S {
       args: [],
     );
   }
-  
-   String get uploadMainImage {
+
+  String get uploadMainImage {
     return Intl.message(
       'Upload Main Image',
       name: 'uploadMainImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get camera {
+    return Intl.message(
+      'Camera',
+      name: 'Camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get gallery {
+    return Intl.message(
+      'Gallery',
+      name: 'gallery',
       desc: '',
       args: [],
     );
