@@ -1165,8 +1165,9 @@ class S {
       args: [],
     );
   }
+
   //sizeDescription
-   String get sizeDescription {
+  String get sizeDescription {
     return Intl.message(
       'Size Description',
       name: 'sizeDescription',
@@ -1174,11 +1175,52 @@ class S {
       args: [],
     );
   }
+
   //newSize
-   String get newSize {
+  String get newSize {
     return Intl.message(
       'New Size',
       name: 'newSize',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /* 
+    "newMaterial": "New Material",
+    "addNewMaterial" : "Add New Material"
+   */
+  String get materialInformations {
+    return Intl.message(
+      'Material Informations',
+      name: 'materialInformations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get newMaterial {
+    return Intl.message(
+      'New Material',
+      name: 'newMaterial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get addNewMaterial {
+    return Intl.message(
+      'Add New Material',
+      name: 'addNewMaterial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get washCare {
+    return Intl.message(
+      'Wash Care',
+      name: 'washCare',
       desc: '',
       args: [],
     );

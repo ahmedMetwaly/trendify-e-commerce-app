@@ -112,5 +112,10 @@
     "camera": "Camera",
     "gallery": "Gallery",
     "sizeDescription" : "Size Description",
-    "newSize" : "New Size"
+    "newSize" : "New Size",
+    "materialInformations" : "Material Informations",
+    "newMaterial": "New Material",
+    "addNewMaterial" : "Add New Material",
+    "washCare": "Wash care"
+    
 }

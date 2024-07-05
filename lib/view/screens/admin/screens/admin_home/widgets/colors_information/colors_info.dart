@@ -60,7 +60,7 @@ class ColorsInformation extends StatelessWidget {
                               nameController:
                                   context.read<AddColor>().colorsCode[index],
                               title: S.current.colorCode,
-                              enabled: false,
+                              readOnly: true,
                             ),
                           ),
                           const SizedBox(width: 10),
@@ -72,7 +72,7 @@ class ColorsInformation extends StatelessWidget {
                         nameController:
                             context.read<AddColor>().colorsName[index],
                         title: S.current.colorName,
-                        enabled: false,
+                        readOnly: true,
                       ),
                       const SizedBox(height: SizeManager.sSpace),
                       ImagesSection(

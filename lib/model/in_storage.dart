@@ -1,22 +1,22 @@
-import 'package:shop_app/model/product_size.dart';
-
 class ProductInStock {
   String? color;
   int? quantity;
-  ProductSize? size;
-  ProductInStock({required this.color, required this.quantity, required this.size});
+  List<String>? availableSizes;
+  ProductInStock(
+      {required this.color,
+      required this.quantity,
+      required this.availableSizes});
   ProductInStock.fromJson(Map<String, dynamic> json) {
     color = json["color"];
     quantity = json["quantity"];
-    size = ProductSize.fromJson(json["size"]);
+    availableSizes = json["availableSizes"];
   }
   Map<String, dynamic> toJson() {
     Map<String, dynamic> data = {};
     data["color"] = color;
     data["quantity"] = quantity;
-    if (size != null) {
-      data["size"] = size!.toJson();
-    }
+    data["availableSizes"] = availableSizes;
+
     return data;
   }
 }

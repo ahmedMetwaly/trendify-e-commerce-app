@@ -111,6 +111,10 @@
     "uploadMainImage": "أضف الصورة الرئيسية",
     "camera": "كاميرا",
     "gallery": "معرض الصور",
-    "sizeDescription" : "وصف المقاس",
-    "newSize" : "مقاس جديد"
+    "sizeDescription": "وصف المقاس",
+    "newSize": "مقاس جديد",
+    "materialInformations": "معلومات عن الخامة",
+    "newMaterial": "خامة جديدة",
+    "addNewMaterial": "إضافة خامة جديدة",
+    "washCare": "تعليمات الغسيل"
 }

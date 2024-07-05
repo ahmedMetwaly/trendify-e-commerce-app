@@ -5,10 +5,12 @@ import "package:shop_app/resources/values_manager.dart";
 import "package:shop_app/view/screens/admin/screens/admin_home/widgets/price_info.dart";
 import "package:shop_app/view/screens/admin/screens/admin_home/widgets/upload_main_image/upload_image.dart";
 
+import "../../../../../../model/description.dart";
 import "../../../../../components/elevated_button.dart";
 import "../widgets/colors_information/colors_info.dart";
 import "../widgets/main_info.dart";
-import "../widgets/size_info.dart";
+import "../widgets/material_inforamtion/material_informations.dart";
+import "../widgets/size_informations/size_info.dart";
 
 class AddProduct extends StatelessWidget {
   const AddProduct({super.key});
@@ -19,12 +21,9 @@ class AddProduct extends StatelessWidget {
     final TextEditingController brand = TextEditingController();
     final TextEditingController price = TextEditingController();
     final TextEditingController salePrecentage = TextEditingController();
-
     final formKey = GlobalKey<FormState>();
-    //List<ProductSize>? size;
-    /*ProductMaterial? material;
-  Description? description;
-  final TextEditingController shippingTerms= TextEditingController();
+    Description? description;
+  /*final TextEditingController shippingTerms= TextEditingController();
   List<Review>? reviews;
   List<TextEditingController>? colors;
   Category? category;
@@ -34,29 +33,27 @@ class AddProduct extends StatelessWidget {
       appBar: AppBar(
         title: Text(S.current.addProduct),
       ),
-      bottomNavigationBar: Builder(
-        builder: (context) {
-          return SingleChildScrollView(
-            child: Container(
-                decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.inversePrimary,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Theme.of(context).colorScheme.outline,
-                        blurRadius: SizeManager.sBlurRadius,
-                      )
-                    ]),
-                padding: const EdgeInsets.all(PaddingManager.pInternalPadding),
-                height: MediaQuery.of(context).size.height * 0.1,
-                child: MyElevatedButton(
-                    title: S.current.addProduct,
-                    color: Theme.of(context).colorScheme.primary,
-                    onPress: () {
-                      //TODO:: add product to database
-                    })),
-          );
-        }
-      ),
+      bottomNavigationBar: Builder(builder: (context) {
+        return SingleChildScrollView(
+          child: Container(
+              decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Theme.of(context).colorScheme.outline,
+                      blurRadius: SizeManager.sBlurRadius,
+                    )
+                  ]),
+              padding: const EdgeInsets.all(PaddingManager.pInternalPadding),
+              height: MediaQuery.of(context).size.height * 0.1,
+              child: MyElevatedButton(
+                  title: S.current.addProduct,
+                  color: Theme.of(context).colorScheme.primary,
+                  onPress: () {
+                    //TODO:: add product to database
+                  })),
+        );
+      }),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.all(
@@ -76,6 +73,8 @@ class AddProduct extends StatelessWidget {
                 const ColorsInformation(),
                 const SizedBox(height: 25),
                 const SizeInformations(),
+                const SizedBox(height: 25),
+                const MaterialInformations(),
               ],
             ),
           ),

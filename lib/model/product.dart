@@ -3,7 +3,6 @@ import 'colors_model.dart';
 import 'description.dart';
 import 'in_storage.dart';
 import 'product_material.dart';
-import 'product_size.dart';
 import 'review.dart';
 
 class Product {
@@ -12,7 +11,7 @@ class Product {
   String? brand;
   double? price;
   double? salePrecentage;
-  List<ProductSize>? size;
+  List<String>? availableSizes;
   ProductMaterial? material;
   Description? description;
   String? shippingTerms;
@@ -28,7 +27,7 @@ class Product {
       required this.brand,
       required this.price,
       required this.salePrecentage,
-      required this.size,
+      required this.availableSizes,
       required this.material,
       required this.description,
       required this.shippingTerms,
@@ -44,8 +43,7 @@ class Product {
     brand = json["brand"];
     price = json["price"];
     salePrecentage = json["salePrecentage"];
-    size =
-        json["size"].map<ProductSize>((e) => ProductSize.fromJson(e)).toList();
+    availableSizes = json["availableSizes"];
     /*  if (json['size'] != null) {
       size = <size>[];
       json['size'].forEach((v) {
@@ -57,7 +55,9 @@ class Product {
     reviews = json["reviews"].map<Review>((e) => Review.fromJson(e)).toList();
     images = json["images"];
     puplishedDate = json["puplishedDate"];
-    colors = json["colors"].map<ColorsModel>((e) => ColorsModel.fromJson(e)).toList();
+    colors = json["colors"]
+        .map<ColorsModel>((e) => ColorsModel.fromJson(e))
+        .toList();
     category = Category.fromJson(json["category"]);
     productsInStock = json["productsInStock"]
         .map<ProductInStock>((e) => ProductInStock.fromJson(e))
@@ -70,9 +70,8 @@ class Product {
     data['brand'] = brand;
     data["price"] = price;
     data["salePrecentage"] = salePrecentage;
-    if (size != null) {
-      data['size'] = size!.map((v) => v.toJson()).toList();
-    }
+    data["availableSizes"] = availableSizes;
+
     if (material != null) {
       data['material'] = material!.toJson();
     }
@@ -85,9 +84,10 @@ class Product {
     }
     data["images"] = images;
     data["puplishedDate"] = puplishedDate;
-if (colors != null) {
+    if (colors != null) {
       data['colors'] = colors!.map((v) => v.toJson()).toList();
-    }    if (category != null) {
+    }
+    if (category != null) {
       data["category"] = category!.toJson();
     }
     if (productsInStock != null) {

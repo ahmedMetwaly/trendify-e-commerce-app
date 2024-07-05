@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shop_app/bloc/admin/add_product_bloc/add_product_bloc.dart';
 import 'package:shop_app/bloc/admin/color_management_bloc/color_bloc.dart';
+import 'package:shop_app/bloc/admin/material_informations_bloc/material_information_bloc.dart';
 import 'package:shop_app/bloc/admin/size_management_bloc/size_bloc.dart';
 import 'package:shop_app/bloc/authentication/auth_events.dart';
 import 'package:shop_app/bloc/firestore/firestore_bloc.dart';
@@ -43,6 +44,9 @@ void main() async {
     BlocProvider(create: (context) => AddProductBloc()),
     BlocProvider(create: (context) => AddColor()),
     BlocProvider(create: (context) => AddSize()),
+    BlocProvider(create: (context) => MaterialInformationBloc(),
+    
+    ),
   ], child: const MyApp()));
 }
 
