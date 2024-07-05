@@ -21,8 +21,7 @@ class UploadMainImage extends StatelessWidget {
                     context: context,
                     backgroundColor: Colors.transparent,
                     builder: (context) => Container(
-                      padding:
-                          const EdgeInsets.all(50),
+                      padding: const EdgeInsets.all(50),
                       height: MediaQuery.of(context).size.height * 0.25,
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       decoration: BoxDecoration(
@@ -41,14 +40,18 @@ class UploadMainImage extends StatelessWidget {
                                 child: GestureDetector(
                               onTap: () => context
                                   .read<AddProductBloc>()
-                                  .pickMainImage(ImageSource.camera),
+                                  .pickMainImage(ImageSource.camera)
+                                  .then(
+                                    (value) => Navigator.of(context).pop(),
+                                  ),
                               child: Container(
                                 padding: const EdgeInsets.all(
                                     PaddingManager.pInternalPadding),
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                      color:
-                                          Theme.of(context).colorScheme.primary),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
                                   borderRadius: BorderRadius.circular(
                                       SizeManager.borderRadius),
                                 ),
@@ -67,14 +70,17 @@ class UploadMainImage extends StatelessWidget {
                                 child: GestureDetector(
                               onTap: () => context
                                   .read<AddProductBloc>()
-                                  .pickMainImage(ImageSource.gallery),
+                                  .pickMainImage(ImageSource.gallery).then(
+                                    (value) => Navigator.of(context).pop(),
+                                  ),
                               child: Container(
                                 padding: const EdgeInsets.all(
                                     PaddingManager.pInternalPadding),
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                      color:
-                                          Theme.of(context).colorScheme.primary),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .primary),
                                   borderRadius: BorderRadius.circular(
                                       SizeManager.borderRadius),
                                 ),

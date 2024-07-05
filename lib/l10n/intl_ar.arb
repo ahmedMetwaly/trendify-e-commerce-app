@@ -110,5 +110,7 @@
     "addNewSize": "اضف مقاس جديد",
     "uploadMainImage": "أضف الصورة الرئيسية",
     "camera": "كاميرا",
-    "gallery": "معرض الصور"
+    "gallery": "معرض الصور",
+    "sizeDescription" : "وصف المقاس",
+    "newSize" : "مقاس جديد"
 }

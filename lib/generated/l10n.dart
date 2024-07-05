@@ -1165,6 +1165,24 @@ class S {
       args: [],
     );
   }
+  //sizeDescription
+   String get sizeDescription {
+    return Intl.message(
+      'Size Description',
+      name: 'sizeDescription',
+      desc: '',
+      args: [],
+    );
+  }
+  //newSize
+   String get newSize {
+    return Intl.message(
+      'New Size',
+      name: 'newSize',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

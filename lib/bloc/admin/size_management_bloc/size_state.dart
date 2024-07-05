@@ -7,3 +7,5 @@ class SizeLoading extends SizeStates {}
 class SizeAdded extends SizeStates {}
 
 class DeleteSize extends SizeStates {}
+
+class AddNewSize extends SizeStates{}

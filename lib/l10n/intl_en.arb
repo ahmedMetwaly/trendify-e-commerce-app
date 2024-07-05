@@ -110,5 +110,7 @@
     "addNewSize": "Add New Size",
     "uploadMainImage": "Uplaod Main Image",
     "camera": "Camera",
-    "gallery": "Gallery"
+    "gallery": "Gallery",
+    "sizeDescription" : "Size Description",
+    "newSize" : "New Size"
 }
