@@ -132,5 +132,7 @@
     "female": "Female",
     "uniSex": "Unisex",
     "addNewSection": "Add new section",
-    "newSection" : "New section"
+    "newSection" : "New section",
+    "uploadSizeImage":"Upload size image",
+    "pickImages" : "Pick images"
 }

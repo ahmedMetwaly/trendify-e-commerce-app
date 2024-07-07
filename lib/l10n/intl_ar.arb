@@ -132,6 +132,7 @@
     "female":"حريمى",
     "uniSex" : "الجنسين",
     "addNewSection": "إضافة قسم جديد",
-    "newSection" : "قسم جديد"
-
+    "newSection" : "قسم جديد",
+    "uploadSizeImage":"رفع صورة المقاس",
+    "pickImages" : "رفع صور"
 }

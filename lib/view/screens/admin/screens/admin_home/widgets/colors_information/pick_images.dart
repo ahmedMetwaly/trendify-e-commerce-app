@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/bloc/admin/color_management_bloc/color_state.dart';
+import 'package:shop_app/generated/l10n.dart';
 
 import '../../../../../../../bloc/admin/color_management_bloc/color_bloc.dart';
 import '../../../../../../../resources/values_manager.dart';
@@ -27,7 +28,7 @@ class PickImages extends StatelessWidget {
               children: [
                 const Icon(Icons.collections_rounded, size: 25),
                 const SizedBox(width: SizeManager.sSpace),
-                Text("Pick Images",
+                Text(S.current.pickImages,
                     style: Theme.of(context).textTheme.bodyMedium),
               ],
             )),

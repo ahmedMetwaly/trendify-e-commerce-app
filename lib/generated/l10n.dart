@@ -1369,6 +1369,22 @@ class S {
       args: [],
     );
   }
+  String get uploadSizeImage {
+    return Intl.message(
+      'Upload size image',
+      name: 'uploadSizeImage',
+      desc: '',
+      args: [],
+    );
+  }String get pickImages {
+    return Intl.message(
+      'Pick images',
+      name: 'pickImages',
+      desc: '',
+      args: [],
+    );
+  }
+     
   /*
   "male":"Male",
     "female":"Female",

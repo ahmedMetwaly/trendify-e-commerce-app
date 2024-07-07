@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 
 import 'size_state.dart';
 
@@ -39,5 +42,22 @@ class AddSize extends Cubit<SizeStates> {
       availableSizes.remove(sizes.keys.toList()[index]);
     }
     emit(SizeAdded());
+  }
+
+  File? image;
+
+  Future pickSizeImage(ImageSource imageSource) async {
+    print("work");
+    final ImagePicker picker = ImagePicker();
+    XFile? selectedImage = await picker.pickImage(source: imageSource);
+    if (selectedImage != null) {
+      image = File(selectedImage.path);
+      print("image path = ${image!.path}");
+      emit(SizeImageLoaded());
+    }
+  }
+  void deleteSizeImage(){
+    image = null;
+    emit(SizeImageDeleted());
   }
 }

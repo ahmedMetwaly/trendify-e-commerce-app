@@ -9,3 +9,7 @@ class SizeAdded extends SizeStates {}
 class DeleteSize extends SizeStates {}
 
 class AddNewSize extends SizeStates{}
+
+class SizeImageLoaded extends SizeStates{}
+
+class SizeImageDeleted extends SizeStates{}

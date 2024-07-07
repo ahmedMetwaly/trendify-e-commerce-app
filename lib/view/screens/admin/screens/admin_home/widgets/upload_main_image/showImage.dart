@@ -1,22 +1,22 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/bloc/admin/add_product_bloc/add_product_states.dart';
+
 import 'package:shop_app/resources/values_manager.dart';
 
-import '../../../../../../../bloc/admin/add_product_bloc/add_product_bloc.dart';
 
-class ShowMainImage extends StatelessWidget {
-  const ShowMainImage({super.key});
-
+class ShowImage extends StatelessWidget {
+  const ShowImage({super.key, required this.deleteFunction,required this.imageFile});
+final Function deleteFunction;
+final File imageFile ;
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AddProductBloc, AddProductStates>(
-      builder: (BuildContext context, state) => Column(children: [
+    return  Column(children: [
         Align(
             alignment: Alignment.topRight,
             child: IconButton.outlined(
-                onPressed: () =>
-                    context.read<AddProductBloc>().deleteMainImage(),
+                onPressed: () => deleteFunction(),
+                    
                 icon: Icon(
                   Icons.delete,
                   color: Theme.of(context).colorScheme.primary,
@@ -28,12 +28,11 @@ class ShowMainImage extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(SizeManager.borderRadius),
             child: Image.file(
-              context.read<AddProductBloc>().image!,
+              imageFile,
               fit: BoxFit.cover,
             ),
           ),
         ),
-      ]),
-    );
+      ]);
   }
 }

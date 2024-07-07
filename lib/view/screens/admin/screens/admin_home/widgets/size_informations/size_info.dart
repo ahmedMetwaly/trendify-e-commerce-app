@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/bloc/admin/size_management_bloc/size_bloc.dart';
 import 'package:shop_app/bloc/admin/size_management_bloc/size_state.dart';
 import 'package:shop_app/view/screens/admin/screens/admin_home/widgets/material_inforamtion/addMaterialField.dart';
-import 'package:shop_app/view/screens/admin/screens/admin_home/widgets/size_informations/size_options.dart';import '../../../../../../../generated/l10n.dart';
+import 'package:shop_app/view/screens/admin/screens/admin_home/widgets/size_informations/size_options.dart';
+import 'package:shop_app/view/screens/admin/screens/admin_home/widgets/size_informations/uploadSizeImage.dart';import '../../../../../../../generated/l10n.dart';
 import '../../../../../../../resources/values_manager.dart';
 
 class SizeInformations extends StatelessWidget {
@@ -39,6 +40,7 @@ class SizeInformations extends StatelessWidget {
             ),
             const SizeOptions(),
             const SizedBox(height: SizeManager.sSpace16),
+            const UplaodSizeImage(),
             TextButton.icon(
                 onPressed: () {
                   TextEditingController size = TextEditingController();
