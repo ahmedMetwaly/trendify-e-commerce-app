@@ -1,12 +1,11 @@
 import "package:flutter/material.dart";
-
 import "package:shop_app/generated/l10n.dart";
 import "package:shop_app/resources/values_manager.dart";
 import "package:shop_app/view/screens/admin/screens/admin_home/widgets/price_info.dart";
 import "package:shop_app/view/screens/admin/screens/admin_home/widgets/upload_main_image/upload_image.dart";
-
-import "../../../../../../model/description.dart";
+import "../../../../../../model/in_storage.dart";
 import "../../../../../components/elevated_button.dart";
+import "../widgets/category_informations/category_informations.dart";
 import "../widgets/colors_information/colors_info.dart";
 import "../widgets/main_info.dart";
 import "../widgets/material_inforamtion/material_informations.dart";
@@ -22,13 +21,11 @@ class AddProduct extends StatelessWidget {
     final TextEditingController price = TextEditingController();
     final TextEditingController salePrecentage = TextEditingController();
     final formKey = GlobalKey<FormState>();
-    Description? description;
-  /*final TextEditingController shippingTerms= TextEditingController();
-  List<Review>? reviews;
-  List<TextEditingController>? colors;
-  Category? category;
+
+    
+  
   List<ProductInStock>? productsInStock;
- */
+ 
     return Scaffold(
       appBar: AppBar(
         title: Text(S.current.addProduct),
@@ -75,6 +72,8 @@ class AddProduct extends StatelessWidget {
                 const SizeInformations(),
                 const SizedBox(height: 25),
                 const MaterialInformations(),
+                const SizedBox(height: 25),
+                const CategoryInformations()
               ],
             ),
           ),

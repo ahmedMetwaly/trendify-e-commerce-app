@@ -1,6 +1,5 @@
 import 'category.dart';
 import 'colors_model.dart';
-import 'description.dart';
 import 'in_storage.dart';
 import 'product_material.dart';
 import 'review.dart';
@@ -13,10 +12,8 @@ class Product {
   double? salePrecentage;
   List<String>? availableSizes;
   ProductMaterial? material;
-  Description? description;
-  String? shippingTerms;
   List<Review>? reviews;
-  List<String>? images;
+  String? mainImage;
   String? puplishedDate;
   List<ColorsModel>? colors;
   Category? category;
@@ -29,10 +26,8 @@ class Product {
       required this.salePrecentage,
       required this.availableSizes,
       required this.material,
-      required this.description,
-      required this.shippingTerms,
       required this.reviews,
-      required this.images,
+      required this.mainImage,
       required this.puplishedDate,
       required this.colors,
       required this.category,
@@ -50,10 +45,8 @@ class Product {
         productDetails!.add(ProductDescriptionModel.fromJson(v));
       }); */
     material = ProductMaterial.fromJson(json["material"]);
-    description = Description.fromJson(json["description"]);
-    shippingTerms = json["shippingTerms"];
     reviews = json["reviews"].map<Review>((e) => Review.fromJson(e)).toList();
-    images = json["images"];
+    mainImage = json["mainImage"];
     puplishedDate = json["puplishedDate"];
     colors = json["colors"]
         .map<ColorsModel>((e) => ColorsModel.fromJson(e))
@@ -75,14 +68,11 @@ class Product {
     if (material != null) {
       data['material'] = material!.toJson();
     }
-    if (description != null) {
-      data["description"] = description!.toJson();
-    }
-    data["shippingTerms"] = shippingTerms;
+    
     if (reviews != null) {
       data['reviews'] = reviews!.map((v) => v.toJson()).toList();
     }
-    data["images"] = images;
+    data["mainImage"] = mainImage;
     data["puplishedDate"] = puplishedDate;
     if (colors != null) {
       data['colors'] = colors!.map((v) => v.toJson()).toList();

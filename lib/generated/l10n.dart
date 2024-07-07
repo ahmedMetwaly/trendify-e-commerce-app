@@ -1225,6 +1225,155 @@ class S {
       args: [],
     );
   }
+
+  String get section {
+    return Intl.message(
+      'Section',
+      name: 'section',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get categoryInformations {
+    return Intl.message(
+      'Category Informations',
+      name: 'categoryInformations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get selectASection {
+    return Intl.message(
+      'Select a section',
+      name: 'selectASection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get tShirts {
+    return Intl.message(
+      'T-Shirts',
+      name: 'tShirts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get oversizedTshirts {
+    return Intl.message(
+      'Oversized t-shirts',
+      name: 'oversizedTshirts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get longSleeveTshirts {
+    return Intl.message(
+      'Long sleeve t-shirts',
+      name: 'longSleeveTshirts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get hoodies {
+    return Intl.message(
+      'Hoodies',
+      name: 'hoodies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get sweatshirts {
+    return Intl.message(
+      'Sweatshirts',
+      name: 'sweatshirts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get oversizedHoodies {
+    return Intl.message(
+      'oversized hoodies',
+      name: 'oversizedHoodies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get gender {
+    return Intl.message(
+      'Gender',
+      name: 'gender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get selectAGender {
+    return Intl.message(
+      'Select a gender',
+      name: 'selectAGender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get male {
+    return Intl.message(
+      'Male',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get female {
+    return Intl.message(
+      'Female',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get uniSex {
+    return Intl.message(
+      'Unisex',
+      name: 'uniSex',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get addNewSection {
+    return Intl.message(
+      'Add new section',
+      name: 'addNewSection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get newSection {
+    return Intl.message(
+      'New section',
+      name: 'newSection',
+      desc: '',
+      args: [],
+    );
+  }
+  /*
+  "male":"Male",
+    "female":"Female",
+    "uniSex" : "Unisex"
+   */
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -116,5 +116,22 @@
     "materialInformations": "معلومات عن الخامة",
     "newMaterial": "خامة جديدة",
     "addNewMaterial": "إضافة خامة جديدة",
-    "washCare": "تعليمات الغسيل"
+    "washCare": "تعليمات الغسيل",
+    "section": "نوع الصنف",
+    "categoryInformations": "معلومات التصنيف ",
+    "selectASection": "أختر نوع الصنف",
+    "tShirts": "تيشرت",
+    "oversizedTshirts": "تيشرت أوفر سايز",
+    "longSleeveTshirts": "تسشرت بكم",
+    "hoodies": "هودى",
+    "sweatshirts": "سويتشيرت",
+    "oversizedHoodies": "هودى أوفر سايز",
+    "gender": "الجنس",
+    "selectAGender": "اختر الجنس",
+    "male":"رجالى",
+    "female":"حريمى",
+    "uniSex" : "الجنسين",
+    "addNewSection": "إضافة قسم جديد",
+    "newSection" : "قسم جديد"
+
 }
