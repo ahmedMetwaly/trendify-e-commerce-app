@@ -1043,7 +1043,7 @@ class S {
   /// `Sale precentage must be less than 100`
   String get salePrecentageError {
     return Intl.message(
-      'Sale precentage must be less than 100',
+      'Must be less than 100',
       name: 'salePrecentageError',
       desc: '',
       args: [],
@@ -1384,12 +1384,33 @@ class S {
       args: [],
     );
   }
+  String get inStock {
+    return Intl.message(
+      'In stock infromations',
+      name: 'inStock',
+      desc: '',
+      args: [],
+    );
+  }
+
+ String get quantity {
+    return Intl.message(
+      'Quantity',
+      name: 'quantity',
+      desc: '',
+      args: [],
+    );
+  }
+  String get productAddedSuccessfully {
+    return Intl.message(
+      'Product added successfully',
+      name: 'productAddedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
      
-  /*
-  "male":"Male",
-    "female":"Female",
-    "uniSex" : "Unisex"
-   */
+
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

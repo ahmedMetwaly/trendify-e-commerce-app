@@ -98,7 +98,7 @@
     "brand": "Brand",
     "price": "Price",
     "salePrecentage": "Sale precentage",
-    "salePrecentageError": "Sale precentage must be less than 100",
+    "salePrecentageError": "must be less than 100",
     "PriceInfo": "Price information",
     "colorsInformation": "Colors information",
     "addNewColor": "Add new color",
@@ -134,5 +134,8 @@
     "addNewSection": "Add new section",
     "newSection" : "New section",
     "uploadSizeImage":"Upload size image",
-    "pickImages" : "Pick images"
+    "pickImages" : "Pick images",
+    "inStock" : "In stock informations",
+    "quantity": "Quantity",
+    "productAddedSuccessfully": "Product added successfully"
 }

@@ -11,27 +11,29 @@ class Product {
   double? price;
   double? salePrecentage;
   List<String>? availableSizes;
+  String? sizeImage;
   ProductMaterial? material;
   List<Review>? reviews;
   String? mainImage;
-  String? puplishedDate;
+  String? puplishedDate; //TODO:: new section from date if less than 10 days from published date
   List<ColorsModel>? colors;
-  Category? category;
+  CategoryModel? category;
   List<ProductInStock>? productsInStock;
   Product(
-      {required this.id,
+      { this.id,
       required this.title,
       required this.brand,
       required this.price,
       required this.salePrecentage,
       required this.availableSizes,
+    this.sizeImage,
       required this.material,
-      required this.reviews,
-      required this.mainImage,
+       this.reviews,
+       this.mainImage,
       required this.puplishedDate,
       required this.colors,
       required this.category,
-      required this.productsInStock});
+       this.productsInStock});
   Product.fromJson(Map<String, dynamic> json) {
     id = json["id"];
     title = json["title"];
@@ -39,6 +41,7 @@ class Product {
     price = json["price"];
     salePrecentage = json["salePrecentage"];
     availableSizes = json["availableSizes"];
+    sizeImage = json["sizeImage"];
     /*  if (json['size'] != null) {
       size = <size>[];
       json['size'].forEach((v) {
@@ -51,7 +54,7 @@ class Product {
     colors = json["colors"]
         .map<ColorsModel>((e) => ColorsModel.fromJson(e))
         .toList();
-    category = Category.fromJson(json["category"]);
+    category = CategoryModel.fromJson(json["category"]);
     productsInStock = json["productsInStock"]
         .map<ProductInStock>((e) => ProductInStock.fromJson(e))
         .toList();
@@ -64,6 +67,7 @@ class Product {
     data["price"] = price;
     data["salePrecentage"] = salePrecentage;
     data["availableSizes"] = availableSizes;
+    data["sizeImage"] = sizeImage;
 
     if (material != null) {
       data['material'] = material!.toJson();

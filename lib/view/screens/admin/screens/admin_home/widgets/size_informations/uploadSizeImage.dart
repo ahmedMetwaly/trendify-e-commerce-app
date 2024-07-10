@@ -1,3 +1,5 @@
+import "dart:io";
+
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:image_picker/image_picker.dart";
@@ -28,7 +30,7 @@ class UplaodSizeImage extends StatelessWidget {
               )
           : ShowImage(
               deleteFunction: () => context.read<AddSize>().deleteSizeImage(),
-              imageFile: context.read<AddSize>().image!,
+              imageFile: File(context.read<AddSize>().image!.path),
             ),
     );
   }

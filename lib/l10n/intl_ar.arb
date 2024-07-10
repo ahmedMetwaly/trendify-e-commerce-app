@@ -95,10 +95,10 @@
     "uploadImages": "أضافة صور",
     "productDetails": "تفاصيل المنتج",
     "title": "الأسم",
-    "brand": "المصنع",
+    "brand": "الماركة",
     "price": "السعر",
     "salePrecentage": "نسبة الخصم",
-    "salePrecentageError": "نسبة الخصم لابد ان تكون اقل من 100",
+    "salePrecentageError": "لابد ان تكون اقل من 100",
     "PriceInfo": "معلومات عن السعر",
     "colorsInformation": "معلومات عن الألوان",
     "addNewColor": "إضافة لون جديد",
@@ -134,5 +134,9 @@
     "addNewSection": "إضافة قسم جديد",
     "newSection" : "قسم جديد",
     "uploadSizeImage":"رفع صورة المقاس",
-    "pickImages" : "رفع صور"
+    "pickImages" : "رفع صور",
+    "inStock" : "معلومات عن المخزن",
+    "quantity": "الكمية",
+    "productAddedSuccessfully": "المنتج اضاف بنجاح"
+
 }

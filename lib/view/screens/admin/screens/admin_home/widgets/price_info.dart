@@ -47,11 +47,14 @@ class PriceInfo extends StatelessWidget {
           NumberInput(
             controller: price,
             label: S.current.price,
+            onEditingComplete: (value){},
           ),
           const SizedBox(height: SizeManager.sSpace16),
           NumberInput(
             controller: salePrecentage,
             label: S.current.salePrecentage,
+                        onEditingComplete: (value){},
+
           ),
           const SizedBox(height: SizeManager.sSpace16),
         ],

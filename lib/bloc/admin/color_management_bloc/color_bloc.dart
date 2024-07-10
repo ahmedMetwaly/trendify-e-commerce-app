@@ -4,7 +4,6 @@ import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-
 import 'color_state.dart';
 
 class AddColor extends Cubit<ColorStates> {
@@ -17,13 +16,21 @@ class AddColor extends Cubit<ColorStates> {
     TextEditingController(text: ColorTools.nameThatColor(Colors.red))
   ];
   List<List<File>> images = [[]];
+
   void addNewColor() {
     colorsCode
         .add(TextEditingController(text: ColorTools.colorCode(Colors.red)));
     colorsName
         .add(TextEditingController(text: ColorTools.nameThatColor(Colors.red)));
     images.add([]);
+   
     emit(ColorAdded());
+  }
+
+  void changeCurrentColor(int index, Color dialogPickerColor) {
+    colorsCode[index].text = ColorTools.colorCode(dialogPickerColor);
+    colorsName[index].text = ColorTools.nameThatColor(dialogPickerColor);
+    emit(ColorChanged());
   }
 
   void deleteColor(int index) {

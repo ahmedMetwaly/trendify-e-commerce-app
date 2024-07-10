@@ -1,8 +1,8 @@
-class Category {
+class CategoryModel {
   late String gender;
   late String section;
-  Category({required this.gender, required this.section});
-  Category.fromJson(Map<String, dynamic> json) {
+  CategoryModel({required this.gender, required this.section});
+  CategoryModel.fromJson(Map<String, dynamic> json) {
     gender = json["gender"];
     section = json["section"];
   }

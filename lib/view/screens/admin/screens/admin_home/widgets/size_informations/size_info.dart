@@ -4,14 +4,16 @@ import 'package:shop_app/bloc/admin/size_management_bloc/size_bloc.dart';
 import 'package:shop_app/bloc/admin/size_management_bloc/size_state.dart';
 import 'package:shop_app/view/screens/admin/screens/admin_home/widgets/material_inforamtion/addMaterialField.dart';
 import 'package:shop_app/view/screens/admin/screens/admin_home/widgets/size_informations/size_options.dart';
-import 'package:shop_app/view/screens/admin/screens/admin_home/widgets/size_informations/uploadSizeImage.dart';import '../../../../../../../generated/l10n.dart';
+import 'package:shop_app/view/screens/admin/screens/admin_home/widgets/size_informations/uploadSizeImage.dart';
+import '../../../../../../../generated/l10n.dart';
 import '../../../../../../../resources/values_manager.dart';
 
 class SizeInformations extends StatelessWidget {
   const SizeInformations({
     super.key,
+    required this.isChoosed,
   });
-
+  final bool isChoosed;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AddSize, SizeStates>(
@@ -39,6 +41,13 @@ class SizeInformations extends StatelessWidget {
               ],
             ),
             const SizeOptions(),
+            isChoosed
+                ? const SizedBox()
+                : Text(
+                    S.current.requiredField,
+                    style:
+                        TextStyle(color: Theme.of(context).colorScheme.error),
+                  ),
             const SizedBox(height: SizeManager.sSpace16),
             const UplaodSizeImage(),
             TextButton.icon(

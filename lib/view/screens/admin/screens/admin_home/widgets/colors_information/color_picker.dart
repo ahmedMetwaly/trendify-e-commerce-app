@@ -1,6 +1,7 @@
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/bloc/admin/color_management_bloc/color_state.dart';
 
 import '../../../../../../../bloc/admin/color_management_bloc/color_bloc.dart';
 
@@ -26,40 +27,44 @@ class _ColorPickerPageState extends State<ColorPickerPage> {
   Widget build(BuildContext context) {
     print(ColorTools.colorCode(dialogPickerColor) +
         ColorTools.nameThatColor(dialogPickerColor));
-    return ColorIndicator(
-      width: 44,
-      height: 44,
-      borderRadius: 4,
-      color: dialogPickerColor,
-      onSelectFocus: false,
-      onSelect: () async {
-        // Store current color before we open the dialog.
-        final Color colorBeforeDialog = dialogPickerColor;
-        // Wait for the picker to close, if dialog was dismissed,
-        // then restore the color we had before it was opened.
-        if (!(await colorPickerDialog())) {
-          setState(() {
-            dialogPickerColor = colorBeforeDialog;
-            context.read<AddColor>().colorsCode[widget.index].text =
-                ColorTools.colorCode(dialogPickerColor);
-            context.read<AddColor>().colorsName[widget.index].text =
-                ColorTools.nameThatColor(dialogPickerColor);
-          });
-        }
-      },
+    return BlocBuilder<AddColor,ColorStates>(
+      builder: (BuildContext context, ColorStates state) => ColorIndicator(
+        width: 44,
+        height: 44,
+        borderRadius: 4,
+        color: dialogPickerColor,
+        onSelectFocus: false,
+        onSelect: () async {
+          // Store current color before we open the dialog.
+          final Color colorBeforeDialog = dialogPickerColor;
+          // Wait for the picker to close, if dialog was dismissed,
+          // then restore the color we had before it was opened.
+          if (!(await colorPickerDialog())) {
+              dialogPickerColor = colorBeforeDialog;
+              context.read<AddColor>().changeCurrentColor(widget.index,dialogPickerColor);
+             /*  context.read<AddColor>().colorsCode[widget.index].text =
+                  ColorTools.colorCode(dialogPickerColor);
+              context.read<AddColor>().colorsName[widget.index].text =
+                  ColorTools.nameThatColor(dialogPickerColor); */
+            
+          }
+        },
+      ),
     );
   }
 
   Future<bool> colorPickerDialog() async {
     return ColorPicker(
       color: dialogPickerColor,
-      onColorChanged: (Color color) => setState(() {
+      onColorChanged: (Color color)  {
         dialogPickerColor = color;
-        context.read<AddColor>().colorsCode[widget.index].text =
+                      context.read<AddColor>().changeCurrentColor(widget.index,dialogPickerColor);
+
+/*         context.read<AddColor>().colorsCode[widget.index].text =
             ColorTools.colorCode(dialogPickerColor);
         context.read<AddColor>().colorsName[widget.index].text =
-            ColorTools.nameThatColor(dialogPickerColor);
-      }),
+            ColorTools.nameThatColor(dialogPickerColor); */
+      },
       width: 40,
       height: 40,
       borderRadius: 4,

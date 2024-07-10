@@ -29,12 +29,14 @@ final String title;
                 .copyWith(fontSize: 17, fontWeight: FontWeight.w500)),
         BlocBuilder<CategoryBloc, CategoryStates>(
           builder: (BuildContext context, CategoryStates state) =>
-              DropDownButtonWidget(
-            value: value,
-            items: items,
-            hint : hint,
-            onChanged: (newvalue) => onChanged(newvalue),
-          ),
+              Expanded(
+                child: DropDownButtonWidget(
+                            value: value,
+                            items: items,
+                            hint : hint,
+                            onChanged: (newvalue) => onChanged(newvalue),
+                          ),
+              ),
         ),
       ],
     );

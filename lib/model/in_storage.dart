@@ -1,21 +1,21 @@
 class ProductInStock {
   String? color;
   int? quantity;
-  List<String>? availableSizes;
+  String? size;
   ProductInStock(
       {required this.color,
       required this.quantity,
-      required this.availableSizes});
+      required this.size});
   ProductInStock.fromJson(Map<String, dynamic> json) {
     color = json["color"];
     quantity = json["quantity"];
-    availableSizes = json["availableSizes"];
+    size = json["size"];
   }
   Map<String, dynamic> toJson() {
     Map<String, dynamic> data = {};
     data["color"] = color;
     data["quantity"] = quantity;
-    data["availableSizes"] = availableSizes;
+    data["size"] = size;
 
     return data;
   }
