@@ -1,3 +1,4 @@
+import 'dart:io';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -18,6 +19,20 @@ class AddSize extends Cubit<SizeStates> {
     "XXXL": false
   };
   List<String> availableSizes = [];
+  String? imageFromNetwork;
+  File? updatedImage;
+  XFile? uploadedImage;
+
+  String? deletedImage;
+  void detectSizes(List<String> aSizes) {
+    aSizes.map((size) {
+      if (sizes[size] == false) {
+        sizes[size] = true;
+        availableSizes.add(size);
+      }
+    }).toList();
+    emit(AvailableSizesSelected());
+  }
 
   void addNewSize(String size) {
     //  availableSizes.add();
@@ -43,19 +58,26 @@ class AddSize extends Cubit<SizeStates> {
     emit(SizeAdded());
   }
 
-  XFile? image;
 
   Future pickSizeImage(ImageSource imageSource) async {
     print("work");
     final ImagePicker picker = ImagePicker();
     XFile? selectedImage = await picker.pickImage(source: imageSource);
     if (selectedImage != null) {
-      image = selectedImage;
+      updatedImage = File(selectedImage.path);
+      uploadedImage = selectedImage;
       emit(SizeImageLoaded());
     }
   }
-  void deleteSizeImage(){
-    image = null;
+
+  void deleteSizeImage() {
+/*     image = null;
+ */
+    print(imageFromNetwork);
+    imageFromNetwork = null;
+    deletedImage = imageFromNetwork ?? "";
+    updatedImage = null;
+    print(imageFromNetwork);
     emit(SizeImageDeleted());
   }
 }

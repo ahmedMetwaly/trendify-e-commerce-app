@@ -137,5 +137,21 @@
     "pickImages" : "Pick images",
     "inStock" : "In stock informations",
     "quantity": "Quantity",
-    "productAddedSuccessfully": "Product added successfully"
+    "productAddedSuccessfully": "Product added successfully",
+    "stock" : "Stock",
+    "noBrandsFound": "No brands found",
+    "sNew" : "New",
+    "soldOut": "Sold out",
+    "material": "Material",
+    "suitableFor": "Suitable for",
+    "type" :"Type",
+    "noProductsFound":"No products found",
+    "searchOnProducts": "Search on products",
+    "editProduct" :"Edit product",
+    "mainColor" : "The main color",
+    "saveProduct" : "Save product",
+    "savedSuccessfully": "Saved successfully",
+    "deleteProduct":"Are you sure to delete this product",
+    "deleteBrand" :"Delete Brand",
+    "deleteBrandConfirmation" : "Are you sure to delete"
 }

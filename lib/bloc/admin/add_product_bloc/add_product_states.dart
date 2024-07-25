@@ -6,7 +6,10 @@ class AddProductLoading extends AddProductStates {}
 
 class AddProductSuccess extends AddProductStates {}
 
-class AddProductError extends AddProductStates {}
+class AddProductError extends AddProductStates {
+  final String error;
+  AddProductError(this.error);
+}
 
 class MainImageLoaded extends AddProductStates {}
 

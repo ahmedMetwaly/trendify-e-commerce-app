@@ -5,9 +5,8 @@ import 'package:shop_app/view/components/space.dart';
 
 class SizeOption extends StatefulWidget {
   const SizeOption(
-      {super.key, required this.availableSizes, required this.sizesDetails});
+      {super.key, required this.availableSizes,});
   final List availableSizes;
-  final List sizesDetails;
 
   @override
   State<SizeOption> createState() => _SizeOptionsState();
@@ -104,7 +103,7 @@ class _SizeOptionsState extends State<SizeOption> {
               ),
             ),
           ),
-          const Space(),
+         /*  const Space(),
           selectedIndex != null
               ? Container(
                   padding: const EdgeInsets.symmetric(
@@ -130,7 +129,7 @@ class _SizeOptionsState extends State<SizeOption> {
                           childAspectRatio: 1,
                           mainAxisExtent: 20,
                         ),
-                        children: widget.sizesDetails[selectedIndex!]
+                        children: widget.availableSizes[selectedIndex!]
                             .map((details) {
                               String measureValue =
                                   "${(double.parse(details.values.first.toString().replaceFirst("inch", "")) * 2.54).round()} cm";
@@ -145,7 +144,7 @@ class _SizeOptionsState extends State<SizeOption> {
                   ),
                 )
               : const SizedBox(),
-        ],
+ */        ],
       ),
     );
   }

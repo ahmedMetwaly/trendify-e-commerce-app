@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../model/product_material.dart';
+import '../../../model/admin_models/product_material.dart';
 import 'material_informations_states.dart';
 
 class MaterialInformationBloc extends Cubit<MaterialInformationStates> {
   MaterialInformationBloc() : super(MaterialInitialState());
-  TextEditingController materialWashCare =TextEditingController(text: "Easy to care for, machine washable in cold or warm water. Can be tumble dried on low heat."); 
-   ProductMaterial? productMaterial ; 
+  TextEditingController materialWashCare = TextEditingController(
+      text:
+          "Easy to care for, machine washable in cold or warm water. Can be tumble dried on low heat.");
+  ProductMaterial? productMaterial = ProductMaterial(
+    material: "Cotton",
+    washCare:
+        "Easy to care for, machine washable in cold or warm water. Can be tumble dried on low heat.",
+  );
 
   Map<String, String> materialOptions = {
     "Cotton":
@@ -32,7 +38,11 @@ class MaterialInformationBloc extends Cubit<MaterialInformationStates> {
     "Tencel":
         "Generally, machine washable in cold water on a gentle cycle. Can be tumble dried on low heat or air dried."
   };
-  int selectedindex=0; // Initially no selection
+  int selectedindex = 0; // Initially no selection
+  void detectIndex(String material){
+    selectedindex = materialOptions.keys.toList().indexOf(material);
+    chooseMaterial(selectedindex);
+  }
   void chooseMaterial(int? index) {
     if (index != null) {
       selectedindex = index;

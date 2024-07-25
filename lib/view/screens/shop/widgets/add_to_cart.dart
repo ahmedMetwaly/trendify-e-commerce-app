@@ -11,12 +11,10 @@ class AddToCart extends StatelessWidget {
   const AddToCart({
     super.key,
     required this.id,
-    required this.goodSn,
-    required this.sku,
+
   });
-  final int id;
-  final String goodSn;
-  final String sku;
+  final String id;
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CartBloc, AppStates>(
@@ -45,7 +43,7 @@ class AddToCart extends StatelessWidget {
                       .any((element) => element["id"] == id)) {
                     print("found");
                   } else {
-                    viewModel.addProduct(id, goodSn, sku);
+                    viewModel.addProduct(id);
                     print("added");
                   }
                 }));

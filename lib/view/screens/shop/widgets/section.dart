@@ -25,7 +25,7 @@ class Section extends StatelessWidget {
       builder: (BuildContext context, AppStates state) {
         final viewModel = SectionViewModel.get(context);
         return GestureDetector(
-          onTap: () async => {
+       /*    onTap: () async => {
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => const Scaffold(
                 body: Center(
@@ -37,7 +37,7 @@ class Section extends StatelessWidget {
               List<ProductItem> products = viewModel.products!.item!
                   .map(
                     (product) => ProductItem(
-                      brandName: product.brandBadge ?? StringManager.trendify,
+                       brandName: product.brandBadge ?? StringManager.trendify,
                       title: product.goodsName ?? "",
                       retailPrice: product.retailPrice!.amount ?? "",
                       salePrice: product.salePrice!.amount ?? "",
@@ -52,7 +52,8 @@ class Section extends StatelessWidget {
                               : Theme.of(context).colorScheme.surface,
                       id: int.parse(product.goodsId ?? "0"),
                       goodsSn: product.goodsSn,
-                      productRelationID: product.productRelationID,
+                      productRelationID: product.productRelationID, 
+                      product:Product ,
                       boxFit: BoxFit.cover,
                     ),
                   )
@@ -68,7 +69,7 @@ class Section extends StatelessWidget {
               ));
             }),
           },
-          child: Container(
+          */ child: Container(
             height: size.height * .15,
             decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.inversePrimary,

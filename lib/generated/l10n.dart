@@ -1369,6 +1369,7 @@ class S {
       args: [],
     );
   }
+
   String get uploadSizeImage {
     return Intl.message(
       'Upload size image',
@@ -1376,7 +1377,9 @@ class S {
       desc: '',
       args: [],
     );
-  }String get pickImages {
+  }
+
+  String get pickImages {
     return Intl.message(
       'Pick images',
       name: 'pickImages',
@@ -1384,6 +1387,7 @@ class S {
       args: [],
     );
   }
+
   String get inStock {
     return Intl.message(
       'In stock infromations',
@@ -1393,7 +1397,7 @@ class S {
     );
   }
 
- String get quantity {
+  String get quantity {
     return Intl.message(
       'Quantity',
       name: 'quantity',
@@ -1401,6 +1405,7 @@ class S {
       args: [],
     );
   }
+
   String get productAddedSuccessfully {
     return Intl.message(
       'Product added successfully',
@@ -1409,8 +1414,150 @@ class S {
       args: [],
     );
   }
-     
 
+  String get stock {
+    return Intl.message(
+      'Stock',
+      name: 'stock',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get noBrandsFound {
+    return Intl.message(
+      "No brands found",
+      name: 'noBrandsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get sNew {
+    return Intl.message(
+      "New",
+      name: 'sNew',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get soldOut {
+    return Intl.message(
+      "Sold Out",
+      name: 'soldOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get material {
+    return Intl.message(
+      "Material",
+      name: 'material',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get suitableFor {
+    return Intl.message(
+      "Suitable for",
+      name: 'suitableFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get type {
+    return Intl.message(
+      "Type",
+      name: 'type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get noProductsFound {
+    return Intl.message(
+      "No products found",
+      name: 'noProductsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get searchOnProducts {
+    return Intl.message(
+      "Search on products",
+      name: 'searchOnProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get editProduct {
+    return Intl.message(
+      "Edit product",
+      name: 'editProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get mainColor {
+    return Intl.message(
+      "The main color",
+      name: 'mainColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get saveProduct {
+    return Intl.message(
+      "Save product",
+      name: 'saveProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get savedSuccessfully {
+    return Intl.message(
+      "Saved successfully",
+      name: 'savedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get deleteProduct {
+    return Intl.message(
+      "Are you sure to delete this product",
+      name: 'deleteProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get deleteBrand {
+    return Intl.message(
+      "Delete brand",
+      name: 'deleteBrand',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get deleteBrandConfirmation {
+    return Intl.message(
+      "Are you sure to delete",
+      name: 'deleteBrandConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

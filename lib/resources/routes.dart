@@ -20,4 +20,7 @@ class Routes {
   //admin 
   static const String adminHome = "/adminHome";
   static const String addProduct = "/addProduct";
+  static const String stock = "/stock";
+  static const String brandProducts = "/brandProducts";
+
 }

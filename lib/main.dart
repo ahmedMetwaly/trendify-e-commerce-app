@@ -5,7 +5,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shop_app/bloc/admin/add_product_bloc/add_product_bloc.dart';
 import 'package:shop_app/bloc/admin/category_bloc/category_bloc.dart';
 import 'package:shop_app/bloc/admin/color_management_bloc/color_bloc.dart';
-import 'package:shop_app/bloc/admin/in_stock_bloc/in_stock_bloc.dart';
+import 'package:shop_app/bloc/admin/stock_bloc/stock_bloc.dart';
+import 'package:shop_app/bloc/admin/stock_section_bloc/stock_section_bloc.dart';
 import 'package:shop_app/bloc/admin/material_informations_bloc/material_information_bloc.dart';
 import 'package:shop_app/bloc/admin/size_management_bloc/size_bloc.dart';
 import 'package:shop_app/bloc/authentication/auth_events.dart';
@@ -19,6 +20,7 @@ import 'package:shop_app/services/api/dio.dart';
 import 'package:shop_app/view_model/bloc/cart_view_model.dart';
 import 'package:shop_app/view_model/bloc/partition_view_model.dart';
 import 'package:shop_app/view_model/bloc/product_view_model.dart';
+import 'bloc/admin/edit_product_bloc/edit_product_bloc.dart';
 import 'bloc/authentication/auth_bloc.dart';
 import 'bloc/sharedprefrences/sharedpref_bloc.dart';
 import 'bloc/sharedprefrences/sharedpref_state.dart';
@@ -44,12 +46,14 @@ void main() async {
     BlocProvider(create: (context) => SectionViewModel()),
     BlocProvider(create: (context) => CartBloc()),
     BlocProvider(create: (context) => AddProductBloc()),
+    BlocProvider(create: (context) => StockBloc()),
+    BlocProvider(create: (context) => EditProductBloc()),
     BlocProvider(create: (context) => AddColor()),
     BlocProvider(create: (context) => AddSize()),
-    BlocProvider(create: (context) => InStockBloc()),
+    BlocProvider(create: (context) => StockSectionBloc()),
     BlocProvider(create: (context) => MaterialInformationBloc()),
     BlocProvider(
-      create: (context) => CategoryBloc(),
+      create: (context) => CategoryBloc()
     ),
   ], child: const MyApp()));
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/resources/values_manager.dart';
 import 'package:shop_app/view/components/product_item.dart';
 import 'package:shop_app/view/screens/shop/widgets/cart_icon.dart';
+import '../../../../model/admin_models/product.dart';
 import '../../../components/bottom_sheet.dart';
 
 class SectionProducts extends StatelessWidget {
@@ -10,7 +11,7 @@ class SectionProducts extends StatelessWidget {
     this.products,
     this.sectionTitle,
   });
-  final List<ProductItem>? products;
+  final List<Product>? products;
   final String? sectionTitle;
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class SectionProducts extends StatelessWidget {
             crossAxisSpacing: PaddingManager.p10,
             childAspectRatio: 0.53,
           ),
-          children: products ?? [],
+          children: products!.map((e)=>ProductItem(product: e)).toList(),
         ));
   }
 }

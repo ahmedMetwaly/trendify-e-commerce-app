@@ -1,12 +1,10 @@
 import "package:flutter/material.dart";
-import 'package:shop_app/model/product_models/brand_models.dart';
 import "package:shop_app/resources/string_manager.dart";
-import "package:shop_app/resources/values_manager.dart";
 import "package:shop_app/view/components/image_from_network.dart";
 
 class SizeGuide extends StatelessWidget {
-  const SizeGuide({super.key, required this.sizeTemplate});
-  final SizeTemplate? sizeTemplate;
+  const SizeGuide({super.key, required this.imageUrl});
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,11 +17,11 @@ class SizeGuide extends StatelessWidget {
       body: Column(
         children: [
           ImageFromNetwork(
-            imagePath: sizeTemplate!.imageUrl ?? "",
+            imagePath: imageUrl,
             height: MediaQuery.of(context).size.height * 0.4,
             fit: BoxFit.cover,
           ),
-          Expanded(
+       /*    Expanded(
             child: GridView(
               padding: const EdgeInsets.all(PaddingManager.pMainPadding),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -81,7 +79,7 @@ class SizeGuide extends StatelessWidget {
                   .cast<Widget>(),
             ),
           ),
-        ],
+        */ ],
       ),
     );
   }

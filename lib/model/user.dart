@@ -1,5 +1,5 @@
 import 'cart.dart';
-import 'product.dart';
+import 'admin_models/product.dart';
 
 class UserModel {
   String? uid;

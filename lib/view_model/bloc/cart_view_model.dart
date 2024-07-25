@@ -7,9 +7,9 @@ class CartBloc extends Cubit<AppStates> {
   CartBloc() : super(InitialState());
   static CartBloc get(context) => BlocProvider.of(context);
   List<Map> products = [];
-  void addProduct(int productId, String sn, String sku) {
+  void addProduct(String productId) {
     // add to firebase
-    products.add({"id": productId, "sn": sn, "sku": sku});
+    products.add({"id": productId,});
     emit(AddProduct());
   }
 

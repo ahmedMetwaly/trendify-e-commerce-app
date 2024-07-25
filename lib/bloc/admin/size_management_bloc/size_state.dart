@@ -8,8 +8,10 @@ class SizeAdded extends SizeStates {}
 
 class DeleteSize extends SizeStates {}
 
-class AddNewSize extends SizeStates{}
+class AvailableSizesSelected extends SizeStates {}
 
-class SizeImageLoaded extends SizeStates{}
+class AddNewSize extends SizeStates {}
 
-class SizeImageDeleted extends SizeStates{}
+class SizeImageLoaded extends SizeStates {}
+
+class SizeImageDeleted extends SizeStates {}

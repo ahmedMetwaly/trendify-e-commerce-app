@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/model/product_models/product_details_model.dart';
+import '../../model/admin_models/product.dart';
 import '../../resources/values_manager.dart';
 import 'product_item.dart';
 import 'section_bar.dart';
@@ -15,7 +15,7 @@ class DisplaySection extends StatelessWidget {
   final String sectionTitle;
   final String sectionSlogan;
   final String sectionRoute;
-  final List<ProductModel> products;
+  final List<Product> products;
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +33,7 @@ class DisplaySection extends StatelessWidget {
               vertical: PaddingManager.p10),
           child: ListView.separated(
             itemBuilder: (context, index) => ProductItem(
-              id: 21943155,
-              label:"",
-              labelColor: Colors.black,
-              title: "T-Shirt Sailling",
-              brandName: " women's clothing",
-              imageUrl:
-                  "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-              retailPrice: " 9.99",
-              salePrice: "5.5",
-              goodsSn: "snasns",
-              productRelationID: "lsakklsj",
+              product: products[index],
             ),
             separatorBuilder: (context, index) => const SizedBox(width: 15),
             itemCount: 5,

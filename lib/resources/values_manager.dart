@@ -59,7 +59,7 @@ class SizeManager {
 
   static const double sliverAppbarTitle = 140.0;
 
-  static const double sectionSize = 350.0;
+  static const double sectionSize = 360.0;
 
   static const double radiusOfBNB = 12.0;
   static const double elevationOfBNB = 30.0;
@@ -67,7 +67,7 @@ class SizeManager {
 
   static const double categoryHeight = 100.0; 
   static const double bottomSheetRadius = 34.0; 
-  static const double colorOptionSize = 70.0; 
+  static const double colorOptionSize = 60.0; 
   static const double sizeOptionsHeight= 40.0;
 
   static const double arrowSize =18.0; 

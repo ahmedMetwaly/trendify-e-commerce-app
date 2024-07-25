@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/bloc/admin/category_bloc/category_states.dart';
-import 'package:shop_app/model/category.dart';
 
 import '../../../generated/l10n.dart';
 
@@ -21,18 +20,14 @@ class CategoryBloc extends Cubit<CategoryStates> {
     S.current.female,
     S.current.uniSex
   ];
-  String? gender;
-  CategoryModel? categoryModel;
+   String? gender;
   void changeSectionOption(String? newValue) {
     sectionOption = newValue;
-    categoryModel?.section = newValue!;
     emit(CategoryStateChangeSectionOption());
   }
 
   void changeGenderOption(String? newValue) {
     gender = newValue;
-    categoryModel?.gender = newValue!;
-
     emit(CategoryStateChangeSectionOption());
   }
 

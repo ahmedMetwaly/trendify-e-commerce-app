@@ -14,16 +14,14 @@ class TitleAndPrice extends StatelessWidget {
     required this.brandName,
     required this.retailPrice,
     required this.salePrice,
-    required this.discountAmount,
-    required this.isOnSale,
+    required this.salePrecentage,
   });
 
   final String title;
   final String brandName;
   final String retailPrice;
   final String salePrice;
-  final String discountAmount;
-  final String isOnSale;
+  final String salePrecentage;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -87,7 +85,7 @@ class TitleAndPrice extends StatelessWidget {
             Row(
               children: [
                 Column(children: [
-                  discountAmount != "0"
+                  salePrecentage != "0"
                       ? Text(
                           "$salePrice\$",
                           style: Theme.of(context)
@@ -99,7 +97,7 @@ class TitleAndPrice extends StatelessWidget {
                       : const SizedBox(),
                   Text(
                     "$retailPrice\$",
-                    style: discountAmount == "0"
+                    style: salePrecentage == "0"
                         ? Theme.of(context).textTheme.headlineSmall!.copyWith(
                             color: Theme.of(context).colorScheme.primary)
                         : TextStyle(
@@ -110,9 +108,9 @@ class TitleAndPrice extends StatelessWidget {
                 const SizedBox(
                   width: PaddingManager.p10,
                 ),
-                isOnSale == "1" && discountAmount != "0"
+               salePrecentage != "0"
                     ? Label(
-                        labelTitle: "-$discountAmount%",
+                        labelTitle: "-$salePrecentage%",
                         color: Theme.of(context).colorScheme.primary)
                     : const SizedBox(),
               ],

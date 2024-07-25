@@ -1,4 +1,4 @@
-import 'product.dart';
+import 'admin_models/product.dart';
 
 class CartProduct {
   Product? product;
