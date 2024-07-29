@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Label extends StatelessWidget {
-  const Label({super.key, required this.labelTitle, required this.color});
+  const Label({super.key, required this.labelTitle, required this.color, this.labelColor, this.labelStyle});
 final String labelTitle;
 final Color color;
+final Color ? labelColor;
+final TextStyle ? labelStyle;
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -17,8 +19,8 @@ final Color color;
             ),
             child: Center(
               child: Text(labelTitle,
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                      color: Theme.of(context).colorScheme.inversePrimary)),
+                  style: labelStyle?? Theme.of(context).textTheme.bodySmall!.copyWith(
+                      color: labelColor?? Theme.of(context).colorScheme.inversePrimary)),
             ),
           );
   }

@@ -1558,6 +1558,141 @@ class S {
       args: [],
     );
   }
+
+  String get coupons {
+    return Intl.message(
+      "Coupons",
+      name: 'coupons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get publishedDate {
+    return Intl.message(
+      "Published date",
+      name: 'publishedDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get duration {
+    return Intl.message(
+      "Duration",
+      name: 'duration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get remainingTime {
+    return Intl.message(
+      "Remaining time",
+      name: 'remainingTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get startAt {
+    return Intl.message(
+      "Start date",
+      name: 'startAt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get startTime {
+    return Intl.message(
+      "Start time",
+      name: 'startTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get expiredAt {
+    return Intl.message(
+      "Expired date",
+      name: 'expiredAt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get expiredTime {
+    return Intl.message(
+      "Expired time",
+      name: 'expiredTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get addNewCoupon {
+    return Intl.message(
+      "Add new coupon",
+      name: 'addNewCoupon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get couponCode {
+    return Intl.message(
+      "Coupon code",
+      name: 'couponCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get describtion {
+    return Intl.message(
+      "Describtion",
+      name: 'describtion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get no_coupons_found {
+    return Intl.message(
+      "No coupons found",
+      name: 'no_coupons_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get off {
+    return Intl.message(
+      "Off",
+      name: 'off',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get futureCoupon {
+    return Intl.message(
+      "Comming soon",
+      name: 'futureCoupon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get finished {
+    return Intl.message(
+      "Finshed",
+      name: 'finished',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

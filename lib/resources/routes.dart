@@ -22,5 +22,6 @@ class Routes {
   static const String addProduct = "/addProduct";
   static const String stock = "/stock";
   static const String brandProducts = "/brandProducts";
+  static const String coupons = "/coupons";
 
 }

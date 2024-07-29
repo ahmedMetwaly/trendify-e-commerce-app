@@ -4,6 +4,7 @@ import 'package:shop_app/resources/image_manager.dart';
 import 'package:shop_app/resources/routes.dart';
 import 'package:shop_app/resources/values_manager.dart';
 
+import '../widgets/go_to_screen.dart';
 
 class AdminHome extends StatelessWidget {
   const AdminHome({super.key});
@@ -11,7 +12,6 @@ class AdminHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: AppBar(title:const Text("Admin"),),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.all(PaddingManager.pMainPadding),
@@ -19,20 +19,18 @@ class AdminHome extends StatelessWidget {
           children: [
             Image.asset(ImageManager.splash),
             const SizedBox(height: SizeManager.sSpace),
-            ListTile(
-              onTap: () => Navigator.of(context).pushNamed(Routes.addProduct),
-              title: Text(S.current.addProduct,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: Theme.of(context).colorScheme.onPrimary)),
-              trailing: const Icon(Icons.arrow_forward_ios_rounded),
+            GoToScreen(
+              screenRoute: Routes.addProduct,
+              title: S.current.addProduct,
             ),
-            ListTile(
-              onTap: () => Navigator.of(context).pushNamed(Routes.stock),
-              title: Text(S.current.stock,
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: Theme.of(context).colorScheme.onPrimary)),
-              trailing: const Icon(Icons.arrow_forward_ios_rounded),
-            )
+            GoToScreen(
+              screenRoute: Routes.stock,
+              title: S.current.stock,
+            ),
+            GoToScreen(
+              screenRoute: Routes.coupons,
+              title: S.current.coupons,
+            ),
           ],
         ),
       )),

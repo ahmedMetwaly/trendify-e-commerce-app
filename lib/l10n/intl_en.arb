@@ -153,5 +153,21 @@
     "savedSuccessfully": "Saved successfully",
     "deleteProduct":"Are you sure to delete this product",
     "deleteBrand" :"Delete Brand",
-    "deleteBrandConfirmation" : "Are you sure to delete"
+    "deleteBrandConfirmation" : "Are you sure to delete",
+    "coupons": "Coupons",
+    "publishedDate" : "Published date",
+    "duration" :"Duration",
+    "remainingTime" : "Remaining time",
+    "startAt" : "Start date",
+    "expiredAt" : "Expired date",
+    "addNewCoupon": "Add new coupon",
+    "couponCode" : "Coupon code",
+    "describtion": "Description",
+    "no_coupons_found" : "No coupons found",
+    "off" :"Off",
+    "futureCoupon":"Comming soon",
+    "finished" : "Finished",
+    "startTime": "Sart time",
+    "expiredTime": "Expired time"
+
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/resources/routes.dart';
 import 'package:shop_app/resources/string_manager.dart';
 import 'package:shop_app/view/screens/admin/screens/admin_home/screens/admin_home.dart';
+import 'package:shop_app/view/screens/admin/screens/admin_home/screens/coupons/coupons.dart';
 import 'package:shop_app/view/screens/first_time_opened/first_time_opened.dart';
 import 'package:shop_app/view/screens/home/home.dart';
 import 'package:shop_app/view/screens/home_screen/home_screen.dart';
@@ -44,16 +45,15 @@ class RoutesGeneratour {
         return MaterialPageRoute(builder: (_) => const AdminHome());
       case Routes.addProduct:
         return MaterialPageRoute(
-          settings: route,
-          builder: (_) => const AddProduct());
+            settings: route, builder: (_) => const AddProduct());
       case Routes.stock:
         return MaterialPageRoute(builder: (_) => const Stock());
+      case Routes.coupons:
+        return MaterialPageRoute(builder: (_) => const Coupons());
       case Routes.brandProducts:
         return MaterialPageRoute(
-          settings: route,
-          builder: (_) => const BrandProducts());
-         
-          
+            settings: route, builder: (_) => const BrandProducts());
+
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const Home());
       case Routes.homeScreen:

@@ -1,13 +1,11 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shop_app/bloc/admin/add_product_bloc/add_product_states.dart';
 import 'package:shop_app/model/admin_models/product.dart';
 import 'package:shop_app/services/firebase/admin_service.dart';
 
-import '../color_management_bloc/color_bloc.dart';
 
 class AddProductBloc extends Cubit<AddProductStates> {
   AddProductBloc() : super(AddProductInitial());

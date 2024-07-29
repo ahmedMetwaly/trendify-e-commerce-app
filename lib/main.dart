@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shop_app/bloc/admin/add_product_bloc/add_product_bloc.dart';
 import 'package:shop_app/bloc/admin/category_bloc/category_bloc.dart';
 import 'package:shop_app/bloc/admin/color_management_bloc/color_bloc.dart';
+import 'package:shop_app/bloc/admin/coupon_bloc/coupon_bloc.dart';
 import 'package:shop_app/bloc/admin/stock_bloc/stock_bloc.dart';
 import 'package:shop_app/bloc/admin/stock_section_bloc/stock_section_bloc.dart';
 import 'package:shop_app/bloc/admin/material_informations_bloc/material_information_bloc.dart';
@@ -48,13 +49,12 @@ void main() async {
     BlocProvider(create: (context) => AddProductBloc()),
     BlocProvider(create: (context) => StockBloc()),
     BlocProvider(create: (context) => EditProductBloc()),
+    BlocProvider(create: (context) => CouponBloc()),
     BlocProvider(create: (context) => AddColor()),
     BlocProvider(create: (context) => AddSize()),
     BlocProvider(create: (context) => StockSectionBloc()),
     BlocProvider(create: (context) => MaterialInformationBloc()),
-    BlocProvider(
-      create: (context) => CategoryBloc()
-    ),
+    BlocProvider(create: (context) => CategoryBloc()),
   ], child: const MyApp()));
 }
 
