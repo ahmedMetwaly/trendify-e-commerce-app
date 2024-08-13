@@ -66,6 +66,7 @@ class AdminFirestoreService {
   Future<String> addProduct(Product product) async {
     try {
       //print("user id :${user.uid}");
+      
       final factoryName = _firestore
           .collection('factories')
           .doc(product.brand!.trim().toUpperCase());
@@ -148,18 +149,21 @@ class AdminFirestoreService {
   Future<String> uploadImage(
       {required String brand,
       required String productId,
-      required XFile image,
+      required File image,
       required String field}) async {
     try {
       final storage = FirebaseStorage.instance;
       final imageName = '$productId$field.jpg';
       final reference =
           storage.ref().child('products_main_pictures/$imageName');
-      final uploadTask = reference.putFile(File(image.path));
+      final uploadTask = reference.putFile(image);
       final snapshot = await uploadTask.whenComplete(() => null);
       final url = await snapshot.ref.getDownloadURL();
-      await updateProductField(
-          brand: brand, productId: productId, field: field, data: url);
+      if (field != "") {
+        await updateProductField(
+            brand: brand, productId: productId, field: field, data: url);
+      }
+      print ("url from services url:$url");
       return url.toString();
     } catch (error) {
       //print("error yad");

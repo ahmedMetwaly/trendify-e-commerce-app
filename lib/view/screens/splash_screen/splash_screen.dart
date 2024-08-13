@@ -56,15 +56,15 @@ class SplashScreen extends StatelessWidget {
             ));
       },
       listener: (BuildContext context, AuthenticationStates state) async {
-        if (FirebaseAuth.instance.currentUser!.uid == adminId) {
+        if (FirebaseAuth.instance.currentUser?.uid == adminId) {
           Navigator.of(context).pushReplacementNamed(Routes.adminHome);
         } else {
           if (state is AuthenticationSuccessState &&
-              FirebaseAuth.instance.currentUser!.emailVerified == true) {
+              FirebaseAuth.instance.currentUser?.emailVerified == true) {
             //print("the email verified");
             Navigator.of(context).pushReplacementNamed(Routes.homeScreen);
           } else if (state is AuthenticationSuccessState &&
-              FirebaseAuth.instance.currentUser!.emailVerified == false) {
+              FirebaseAuth.instance.currentUser?.emailVerified == false) {
             //print("the email not verified");
             Navigator.of(context).pushReplacementNamed(Routes.verifyEmail);
           }

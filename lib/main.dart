@@ -11,7 +11,7 @@ import 'package:shop_app/bloc/admin/stock_section_bloc/stock_section_bloc.dart';
 import 'package:shop_app/bloc/admin/material_informations_bloc/material_information_bloc.dart';
 import 'package:shop_app/bloc/admin/size_management_bloc/size_bloc.dart';
 import 'package:shop_app/bloc/authentication/auth_events.dart';
-import 'package:shop_app/bloc/firestore/firestore_bloc.dart';
+import 'package:shop_app/view/screens/user/bloc/user_bloc/user_bloc.dart';
 import 'package:shop_app/firebase_options.dart';
 import 'package:shop_app/generated/l10n.dart';
 import 'package:shop_app/resources/router.dart';
@@ -22,9 +22,11 @@ import 'package:shop_app/view_model/bloc/cart_view_model.dart';
 import 'package:shop_app/view_model/bloc/partition_view_model.dart';
 import 'package:shop_app/view_model/bloc/product_view_model.dart';
 import 'bloc/admin/edit_product_bloc/edit_product_bloc.dart';
+import 'view/screens/admin/screens/orders/bloc/orders_bloc.dart';
 import 'bloc/authentication/auth_bloc.dart';
 import 'bloc/sharedprefrences/sharedpref_bloc.dart';
 import 'bloc/sharedprefrences/sharedpref_state.dart';
+import 'view/screens/user/view/screens/home/bloc/section_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,9 +44,11 @@ void main() async {
       create: (context) => AuthenticationBloc()..add(AppStarted()),
       lazy: false,
     ),
-    BlocProvider(create: (context) => FirestoreBloc()),
+    BlocProvider(create: (context) => UserBloc()),
     BlocProvider(create: (context) => ProductViewModel()),
     BlocProvider(create: (context) => SectionViewModel()),
+    BlocProvider(create: (context) => SectionBloc()),
+    BlocProvider(create: (context) => OrderBloc()),
     BlocProvider(create: (context) => CartBloc()),
     BlocProvider(create: (context) => AddProductBloc()),
     BlocProvider(create: (context) => StockBloc()),

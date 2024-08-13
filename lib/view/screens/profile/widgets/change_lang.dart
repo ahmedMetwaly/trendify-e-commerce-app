@@ -1,4 +1,3 @@
-
 import "package:flutter/material.dart";
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -15,62 +14,15 @@ class ChangeLanguageWidget extends StatelessWidget {
     return BlocConsumer<SharedPrefBloc, SettingsStates>(
         builder: (context, state) => ListTile(
               onTap: () {
-                showModalBottomSheet(
-                  context: context,
-                  backgroundColor: Colors.transparent,
-                  useSafeArea: true,
-                  builder: (context) => Container(
-                    height: MediaQuery.of(context).size.height * 0.4,
-                    width: double.infinity,
-                    padding:
-                        const EdgeInsets.all(PaddingManager.pInternalPadding),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.background,
-                      borderRadius: const BorderRadius.only(
-                          topLeft:
-                              Radius.circular(SizeManager.bottomSheetRadius),
-                          topRight:
-                              Radius.circular(SizeManager.bottomSheetRadius)),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          height: SizeManager.sSpace,
-                        ),
-                        Text(
-                          S.current.selectLanguage,
-                          style: Theme.of(context).textTheme.headlineMedium,
-                        ),
-                        Divider(
-                          color: Theme.of(context).colorScheme.outline,
-                        ),
-                        ListTile(
-                          onTap: () {
-                            
-                            context.read<SharedPrefBloc>().changeLang("en");
-                            Navigator.pop(context);
-                          },
-                          title: Text(S.current.enLang),
-                        ),
-                        ListTile(
-                          onTap: () {
-                           
-                            context.read<SharedPrefBloc>().changeLang("ar");
-                            Navigator.pop(context);
-                          },
-                          title: Text(S.current.arLang),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
+                changeLanguage(context);
               },
               contentPadding: const EdgeInsets.all(0),
               title: Text(
                 S.current.language,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: Theme.of(context).colorScheme.surface),
               ),
               subtitle: Text(
                 Intl.getCurrentLocale() == "en"
@@ -95,5 +47,60 @@ class ChangeLanguageWidget extends StatelessWidget {
             Navigator.of(context).pop();
           }
         });
+  }
+
+  Future<dynamic> changeLanguage(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      useSafeArea: true,
+      builder: (context) => Container(
+        height: MediaQuery.of(context).size.height * 0.4,
+        width: double.infinity,
+        padding: const EdgeInsets.all(PaddingManager.pInternalPadding),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.background,
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(SizeManager.bottomSheetRadius),
+              topRight: Radius.circular(SizeManager.bottomSheetRadius)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: SizeManager.sSpace,
+            ),
+            Center(
+              child: Text(
+                S.current.selectLanguage,
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+            ),
+            Divider(
+              color: Theme.of(context).colorScheme.outline,
+            ),
+            ListTile(
+              onTap: () {
+                context.read<SharedPrefBloc>().changeLang("en");
+                Navigator.pop(context);
+              },
+              title: Text(S.current.enLang,
+                  style: const TextStyle(fontWeight: FontWeight.w400)),
+            ),
+            ListTile(
+              onTap: () {
+                context.read<SharedPrefBloc>().changeLang("ar");
+                Navigator.pop(context);
+              },
+              title: const Text(
+                "العربية",
+                style: TextStyle(fontWeight: FontWeight.w400),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

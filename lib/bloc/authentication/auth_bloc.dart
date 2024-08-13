@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../generated/l10n.dart';
 import '../../model/user.dart';
 import '../../services/firebase/authentication_service.dart';
-import '../../services/firebase/firestore_service.dart';
+import '../../view/screens/user/user_repos/user_repo.dart';
 import '../../utilities/constants.dart';
 import 'aurh_states.dart';
 import 'auth_events.dart';
@@ -40,7 +40,7 @@ class AuthenticationBloc
     final userFireBase = FirebaseAuth.instance.currentUser;
     // //print("checking if the user is null or not");
     if (userFireBase != null) {
-      user = await FirestoreService().getUserData(userFireBase.uid);
+      user = await UserRepo().getUserData(userFireBase.uid);
       // //print("user found loggedIn");
       emit(AuthenticationSuccessState(user: user));
     } else {
@@ -69,7 +69,7 @@ class AuthenticationBloc
               phoneNumber: user.phoneNumber,
               cartProducts: user.cartProducts);
 //          await FirebaseAuthService.sendEmailVerfication();
-          await FirestoreService().saveUserData(user).then((userData) {
+          await UserRepo().saveUserData(user).then((userData) {
             emit(LoadedState());
 
             emit(AuthenticationSuccessState(user: user));
@@ -95,7 +95,7 @@ class AuthenticationBloc
               emailAddress: user.email ?? "", password: user.password ?? "")
           .then((value) async {
         if (value is UserModel) {
-          user = await FirestoreService().getUserData(value.uid ?? "0");
+          user = await UserRepo().getUserData(value.uid ?? "0");
           emit(LoadedState());
 
           emit(AuthenticationSuccessState(user: user));
@@ -119,7 +119,7 @@ class AuthenticationBloc
       await FirebaseAuthService.signInWithGoogle().then((userFormGoogle) async {
         //print(userFormGoogle.uid);
         if (userFormGoogle is UserModel) {
-          await FirestoreService()
+          await UserRepo()
               .getUserData(userFormGoogle.uid ?? "0")
               .then((value) async {
             if (value is UserModel) {
@@ -141,7 +141,7 @@ class AuthenticationBloc
                   history: user.history,
                   phoneNumber: user.phoneNumber,
                   cartProducts: user.cartProducts);
-              await FirestoreService().saveUserData(user).then((userData) {
+              await UserRepo().saveUserData(user).then((userData) {
                 emit(LoadedState());
 
                 emit(AuthenticationSuccessState(
@@ -172,7 +172,7 @@ class AuthenticationBloc
           .then((userFormFacebook) async {
         //print(userFormFacebook.uid);
         if (userFormFacebook is UserModel) {
-          await FirestoreService()
+          await UserRepo()
               .getUserData(userFormFacebook.uid ?? "0")
               .then((value) async {
             if (value is UserModel) {
@@ -194,7 +194,7 @@ class AuthenticationBloc
                   history: user.history,
                   phoneNumber: user.phoneNumber,
                   cartProducts: user.cartProducts);
-              await FirestoreService().saveUserData(user).then((userData) {
+              await UserRepo().saveUserData(user).then((userData) {
                 emit(LoadedState());
 
                 emit(AuthenticationSuccessState(

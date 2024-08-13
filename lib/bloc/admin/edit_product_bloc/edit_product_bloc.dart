@@ -48,7 +48,7 @@ class EditProductBloc extends Cubit<EditProductStates> {
         await AdminFirestoreService().uploadImage(
             brand: product.brand!.trim().toUpperCase(),
             productId: product.id!,
-            image: _uploadedImage!,
+            image: File(_uploadedImage!.path),
             field: "mainImage");
       }
    
@@ -59,7 +59,7 @@ class EditProductBloc extends Cubit<EditProductStates> {
             brand: product.brand!.trim().toUpperCase(),
             productId: product.id!,
             field: "sizeImage",
-            image: sizeImage!);
+            image: File(sizeImage!.path));
         print("uploaded size image ");
       }
       for (int i = 0; i < product.colors!.length; i++) {

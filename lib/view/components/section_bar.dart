@@ -23,25 +23,34 @@ class SectionBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-              Text(
-                slogan,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ],
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                    fontSize: 23,
+                  ),
+                ),
+                Text(
+                  slogan,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
+            ),
           ),
-          TextButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(goto);
-              },
-              child: const Text(StringManager.viewAll))
+          Expanded(
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(goto);
+                  },
+                  child: const Text(StringManager.viewAll)),
+            ),
+          )
         ],
       ),
     );

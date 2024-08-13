@@ -69,6 +69,8 @@ class SizeManager {
   static const double bottomSheetRadius = 34.0; 
   static const double colorOptionSize = 60.0; 
   static const double sizeOptionsHeight= 40.0;
+  static const double orderItemHieght= 120.0;
+
 
   static const double arrowSize =18.0; 
   

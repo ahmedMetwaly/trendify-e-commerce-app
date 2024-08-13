@@ -1,3 +1,4 @@
+import 'package:shop_app/view/screens/admin/screens/orders/models/order_model.dart';
 import 'cart.dart';
 import 'admin_models/product.dart';
 
@@ -12,6 +13,7 @@ class UserModel {
   List<Product>? history;
   String? address;
   List<CartProduct>? cartProducts;
+  List<OrderModel>? orders;
   UserModel(
       {this.uid,
       required this.name,
@@ -23,7 +25,7 @@ class UserModel {
       this.cartProducts,
       this.address,
       this.history,
-      });
+      this.orders});
   UserModel.fromJson(Map<String, dynamic> json) {
     uid = json['uid'];
     name = json['name'];
@@ -41,6 +43,12 @@ class UserModel {
       cartProducts = <CartProduct>[];
       json['cartProducts'].forEach((topic) {
         cartProducts!.add(CartProduct.fromJson(topic));
+      });
+    }
+    if (json['orders'] != null) {
+      orders = <OrderModel>[];
+      json['orders'].forEach((topic) {
+        orders!.add(OrderModel.fromJson(topic));
       });
     }
     if (json['history'] != null) {
@@ -62,8 +70,11 @@ class UserModel {
     if (favouriteProducts != null) {
       data['favouriteProducts'] = favouriteProducts!.map((v) => v).toList();
     }
-  if (cartProducts != null) {
+    if (cartProducts != null) {
       data['cartProducts'] = cartProducts!.map((v) => v).toList();
+    }
+    if (orders != null) {
+      data['orders'] = orders!.map((v) => v).toList();
     }
     if (history != null) {
       data['history'] = history!.map((v) => v).toList();

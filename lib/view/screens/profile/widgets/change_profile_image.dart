@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../bloc/authentication/auth_bloc.dart';
-import '../../../../bloc/firestore/firestore_bloc.dart';
-import '../../../../bloc/firestore/firestore_event.dart';
-import '../../../../bloc/firestore/firestore_state.dart';
+import '../../user/bloc/user_bloc/user_bloc.dart';
+import '../../user/bloc/user_bloc/user_event.dart';
+import '../../user/bloc/user_bloc/user_state.dart';
 import '../../../components/image_from_network.dart';
 
 class ChangeProfileImageWidget extends StatelessWidget {
@@ -13,7 +13,7 @@ class ChangeProfileImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FirestoreBloc, FirestoreState>(
+    return BlocBuilder<UserBloc, UserState>(
       builder: (context, state) {
         //print(state);
         if (state is UpdatindDataState) {
@@ -39,8 +39,8 @@ class ChangeProfileImageWidget extends StatelessWidget {
             )
                 .then((value) {
               if (value != null) {
-                context.read<FirestoreBloc>().profileImage = value;
-                context.read<FirestoreBloc>().add(ChangeProfileImage());
+                context.read<UserBloc>().profileImage = value;
+                context.read<UserBloc>().add(ChangeProfileImage());
               }
               return null;
             });

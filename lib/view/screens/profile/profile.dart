@@ -1,7 +1,6 @@
 import "package:flutter/material.dart";
 import "package:flutter_bloc/flutter_bloc.dart";
 import "package:shop_app/bloc/authentication/auth_events.dart";
-
 import "../../../bloc/authentication/aurh_states.dart";
 import "../../../bloc/authentication/auth_bloc.dart";
 import "../../../generated/l10n.dart";
@@ -11,16 +10,17 @@ import "../../../resources/values_manager.dart";
 import "../../components/image_from_network.dart";
 import "widgets/change_lang.dart";
 import "widgets/change_profile_image.dart";
+import "widgets/user_info.dart";
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
-
   @override
   Widget build(BuildContext context) {
+    var previousScreen = ModalRoute.of(context)?.settings.arguments;
     return Scaffold(
         appBar: AppBar(
-          leading: const SizedBox(),
-          leadingWidth: 0.0,
+          leading: previousScreen == null ? const SizedBox() : null,
+          leadingWidth: previousScreen == null ? 0.0 : null,
           title: Text(
             S.current.myProfile,
             style: Theme.of(context).textTheme.headlineMedium,
@@ -42,50 +42,39 @@ class Profile extends StatelessWidget {
                           width: 150,
                           fit: BoxFit.cover,
                         ),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const SizedBox(height: SizeManager.sSpace),
-                          Text(
-                            state is AuthenticationSuccessState
-                                ? state.user.name ?? S.current.userError
-                                : S.current.guest,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(fontSize: 24),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          Text(
-                            state is AuthenticationSuccessState
-                                ? state.user.email ?? S.current.emailErrorSignUp
-                                : "",
-                            style: Theme.of(context).textTheme.bodySmall,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-
+                  const UserInfo(),
                   // const ChangeTheme(),
                   const ChangeLanguageWidget(),
+                  previousScreen == null
+                      ? ListTile(
+                          onTap: () {
+                            Navigator.of(context).pushNamed(Routes.history);
+                          },
+                          contentPadding: const EdgeInsets.all(0),
+                          title: Text(S.current.history,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .surface)),
+                          trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                        )
+                      : const SizedBox(),
                   ListTile(
-                    onTap: () {
-                      Navigator.of(context).pushNamed(Routes.history);
-                    },
-                    contentPadding: const EdgeInsets.all(0),
-                    title: Text(
-                      S.current.history,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                    trailing: const Icon(Icons.arrow_forward_ios_rounded),
-                  ),
+                      onTap: () {
+                        //TODO:: make a settings screen
+                      },
+                      contentPadding: const EdgeInsets.all(0),
+                      title: Text(S.current.settings,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.surface)),
+                      trailing: const Icon(Icons.arrow_forward_ios_rounded)),
                   const Spacer(),
                   ElevatedButton(
                       onPressed: () {
@@ -148,6 +137,9 @@ class Profile extends StatelessWidget {
                   address: "",
                   phoneNumber: "",
                   cartProducts: []);
+              if (previousScreen != null) {
+                Navigator.of(context).pushNamedAndRemoveUntil(Routes.logIn, (route)=>false);
+              }
             }
           },
         ));

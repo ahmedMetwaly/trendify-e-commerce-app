@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/bloc/authentication/auth_bloc.dart';
 import 'package:shop_app/resources/values_manager.dart';
 import 'package:shop_app/view/components/image_from_network.dart';
-import 'package:shop_app/view/components/label.dart';
-import 'package:shop_app/view/screens/admin/screens/admin_home/screens/edit_product/edit_product.dart';
-import 'package:shop_app/view/screens/shop/product_details.dart';
-import '../../generated/l10n.dart';
+import 'package:shop_app/view/screens/admin/screens/edit_product/edit_product.dart';
+import 'package:shop_app/view/screens/user/view/screens/shop/view/screens/product_details.dart';
 import '../../model/admin_models/product.dart';
+import '../screens/user/bloc/user_bloc/user_bloc.dart';
+import '../screens/user/bloc/user_bloc/user_event.dart';
+import 'check_label.dart';
 import 'fav_btn.dart';
 
 class ProductItem extends StatelessWidget {
@@ -33,6 +35,8 @@ class ProductItem extends StatelessWidget {
                     product: product,
                   )));
         } else {
+          AuthenticationBloc.user.history!.add(product);
+          context.read<UserBloc>().add(UserUpdateHistoryEvent()); 
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => ProductDetails(product: product)));
         }
@@ -117,37 +121,5 @@ class ProductItem extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-int daysBetween(String pastDateString) {
-  // Parse the date string into a DateTime object
-  final pastDate =
-      DateFormat('yyyy-MM-dd HH:mm:ss.SSSSSSS').parse(pastDateString);
-
-  // Get today's date
-  final today = DateTime.now();
-
-  // Calculate the difference in days (ignoring time)
-  final difference = today.difference(pastDate).inDays;
-
-  return difference;
-}
-
-Widget checkLabel(
-    BuildContext context, String sale, String puplishedDate, int quantity) {
-  if (daysBetween(puplishedDate) < 3) {
-    return Label(
-        labelTitle: S.current.sNew,
-        color: Theme.of(context).colorScheme.surface);
-  } else if (double.parse(sale) > 0) {
-    return Label(
-        labelTitle: "$sale%", color: Theme.of(context).colorScheme.primary);
-  } else if (quantity == 0) {
-    return Label(
-        labelTitle: S.current.soldOut,
-        color: Theme.of(context).colorScheme.outline);
-  } else {
-    return const SizedBox();
   }
 }

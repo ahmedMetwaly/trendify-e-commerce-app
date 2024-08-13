@@ -16,7 +16,7 @@ class Product {
   List<Review>? reviews;
   String? mainImage;
   String?
-      puplishedDate; //TODO:: new section from date if less than 10 days from published date
+      puplishedDate; 
   List<ColorsModel>? colors;
   CategoryModel? category;
   List<ProductInStock>? productsInStock;

@@ -8,6 +8,7 @@ class Routes {
   static const String forgetPassword= "/forgetPassword";
 
   static const String home = "/home";
+  static const String profile = "/profile";
 
   static const String signUp = "/signUp";
   //the main screen
@@ -23,5 +24,8 @@ class Routes {
   static const String stock = "/stock";
   static const String brandProducts = "/brandProducts";
   static const String coupons = "/coupons";
+  static const String orders = "/orders";
+  static const String viewOrderDetials = "/viewOrderDetials";
+
 
 }

@@ -4,15 +4,14 @@ class HandlingDate {
   final String date;
 
   HandlingDate({required this.date});
-DateTime fromStringToDate(){
-  print(date);
-  DateTime formattedDate =
-        DateFormat('yyyy-MM-dd').parse(date);
+  DateTime fromStringToDate() {
+    print(date);
+    DateTime formattedDate = DateFormat('yyyy-MM-dd').parse(date);
     return formattedDate;
-}
+  }
+
   String handleDate() {
-    DateTime formattedDate =
-        DateFormat('yyyy-MM-dd').parse(date);
+    DateTime formattedDate = DateFormat('yyyy-MM-dd').parse(date);
     String convertedDate = DateFormat('d MMMM yyyy').format(formattedDate);
     String ordinalDate =
         convertedDate.replaceFirstMapped(RegExp(r'\d+'), (match) {
@@ -26,15 +25,15 @@ DateTime fromStringToDate(){
 
   String convertDate() {
     String dateString = date;
-    List <String> splittedDate = dateString.toString().split(" ");
-   String day =  splittedDate[0].replaceFirst('st', '')
+    List<String> splittedDate = dateString.toString().split(" ");
+    String day = splittedDate[0]
+        .replaceFirst('st', '')
         .replaceFirst('nd', '')
         .replaceFirst('rd', '')
         .replaceFirst('th', '');
     dateString = "$day ${splittedDate[1]} ${splittedDate[2]}";
     DateTime dateTime = DateFormat('d MMMM yyyy').parse(dateString);
-    String formattedDate =
-        DateFormat('yyyy-MM-dd').format(dateTime);
+    String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
     return formattedDate;
   }
 

@@ -33,6 +33,14 @@ class ThemeManager {
         bodyMedium: FontManager.getBodyTextStyle(),
         bodyLarge: FontManager.getBodyLargeTextStyle(),
         bodySmall: FontManager.getHintTextStyle(),
+        labelMedium:  FontManager.getBodyTextStyle(),
+        labelLarge: FontManager.getBodyTextStyle(),
+        labelSmall: FontManager.getBodyTextStyle(),
+        titleMedium:  FontManager.getBodyTextStyle(),
+        titleSmall:  FontManager.getBodyTextStyle(),
+        titleLarge:  FontManager.getBodyTextStyle(),
+        displaySmall:  FontManager.getBodyTextStyle(),
+        displayMedium:  FontManager.getBodyTextStyle()
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/resources/string_manager.dart';
 import 'package:shop_app/resources/values_manager.dart';
 import '../bag/bag.dart';
-import '../shop/shop.dart';
+import '../user/view/screens/home/view/home.dart';
+import '../user/view/screens/shop/view/screens/shop.dart';
 import '../favourite/favourite.dart';
-import '../home/home.dart';
 import '../profile/profile.dart';
 
 class HomeScreen extends StatefulWidget {
